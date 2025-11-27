@@ -23,7 +23,7 @@ Here's a concrete example: During the 5Levels build, I needed 46 intelligence en
 
 But here's what that example glosses over: those specifications took me 2 weeks to create during my strategic thinking phase. The specifications were complete because I had already solved every hard problem. I had decided everything. AI just needed to execute.
 
-And that's the critical distinction: **AI can execute brilliantly from clear specifications. But AI cannot create those specifications.**
+And that's the critical distinction: **AI can execute brilliantly from clear specifications. But AI cannot ideate those specifications.**
 
 ## Gap 1: The Strategic Gap (The "What")
 
