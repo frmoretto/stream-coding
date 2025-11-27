@@ -46,9 +46,9 @@ The AI-accelerated development space is maturing rapidly. These represent curren
 ### Gene Kim & Steve Yegge
 **Kim, G., & Yegge, S. (2025).** [*Vibe Coding: Building Production-Grade Software With GenAI.*](https://itrevolution.com/product/vibe-coding/) IT Revolution.
 
-Three-loop systematic framework for AI-assisted development. Kim is the DevOps pioneer behind *The Phoenix Project*; Yegge is ex-Google/Amazon.
+Documents conversational AI development and comprehensive failure patterns. FAAFO framework (Fast, Ambitious, Autonomous, Fun, Optionality). Foreword by Dario Amodei (Anthropic CEO).
 
-**Stream coding difference:** Kim/Yegge provide comprehensive theoretical framework; stream coding provides tactical execution path optimized for 1-5 person teams.
+**Stream coding difference:** Kim/Yegge catalog failure patterns from conversational development (Context Amnesia, Instruction Drift, Eldritch Code Horror); stream coding provides documentation-first methodology that prevents these patterns through complete upfront specifications.
 
 ### Chip Huyen
 **Huyen, C. (2024).** [*AI Engineering: Building Applications with Foundation Models.*](https://www.oreilly.com/library/view/ai-engineering/9781098166298/) O'Reilly Media.

@@ -115,6 +115,8 @@ But each solves a fragment. GitHub's framework is high-friction to implement. Ki
 
 Stream Coding delivers the complete framework: Strategic thinking → AI-ready documentation → rapid execution → quality control. Not fragments. The proven, systematic methodology.
 
+Gene Kim and Steve Yegge's 2025 book *Vibe Coding* documents the conversational approach to AI development—and catalogs comprehensive failure patterns: Context Amnesia (AI forgets instructions), Instruction Drift (deviates from requirements), and Eldritch Code Horror (incomprehensible but functional code). These patterns emerge from iterative conversation without systematic specification. Stream Coding prevents them through documentation-first methodology where complete specifications eliminate context saturation and instruction drift before code generation begins.
+
 ## What Makes Stream Coding Different
 
 Stream coding is the missing middle. Built specifically for founders and small teams who need enterprise-grade velocity without enterprise complexity, systematic methodology without 6-month implementations, complete frameworks without massive infrastructure, and repeatable processes that work from day one.
