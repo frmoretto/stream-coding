@@ -43,33 +43,33 @@ Spec-Driven Development (SDD)
 
 The AI-accelerated development space is maturing rapidly. These represent current systematic thinking:
 
-### Alexio Cassani
-**Cassani, A. (2025).** [*Code Revealed: Leading Software Development in the Age of AI Agents.*](https://www.amazon.it/Code-Revealed-Leading-Software-Development-ebook/dp/B0FZ4MW7JK/)
-
-Enterprise leadership guide for CTOs, Engineering Managers, and Team Leaders. Includes 7 proprietary frameworks (RACM, ECF, PAIP, RAUC) for systematic AI integration, team reorganization blueprints, and governance frameworks. Written with feedback from 38 industry professionals.
-
-**Stream coding difference:** Cassani addresses *how to lead teams* through AI transformation. Stream coding addresses *how to build products* as a founder or small team. Complementary audiences: if you're managing 50 developers, read Cassani. If you're a solo founder shipping an MVP, read this manifesto.
-
 ### Gene Kim & Steve Yegge
-**Kim, G., & Yegge, S. (2025).** *Vibe Coding: Building Production-Grade Software With GenAI.* IT Revolution.
+**Kim, G., & Yegge, S. (2025).** [*Vibe Coding: Building Production-Grade Software With GenAI.*](https://itrevolution.com/product/vibe-coding/) IT Revolution.
 
 Three-loop systematic framework for AI-assisted development. Kim is the DevOps pioneer behind *The Phoenix Project*; Yegge is ex-Google/Amazon.
 
 **Stream coding difference:** Kim/Yegge provide comprehensive theoretical framework; stream coding provides tactical execution path optimized for 1-5 person teams.
 
 ### Chip Huyen
-**Huyen, C. (2024).** *AI Engineering: Building Applications with Foundation Models.* O'Reilly Media.
+**Huyen, C. (2024).** [*AI Engineering: Building Applications with Foundation Models.*](https://www.oreilly.com/library/view/ai-engineering/9781098166298/) O'Reilly Media.
 
 Systematic framework for AI application development covering evaluation, RAG, fine-tuning, agents, and production deployment. Former Snorkel AI, Stanford ML instructor.
 
 **Stream coding difference:** Huyen focuses on *building with AI models* (AI applications); stream coding focuses on *building software with AI assistance* (AI-accelerated development). Complementary but different problems.
 
 ### Addy Osmani
-**Osmani, A. (2025).** *Beyond Vibe Coding: From Coder to AI-Era Developer.* O'Reilly Media.
+**Osmani, A. (2025).** [*Beyond Vibe Coding: From Coder to AI-Era Developer.*](https://www.oreilly.com/library/view/beyond-vibe-coding/9798341634749/) O'Reilly Media.
 
 Google Engineering Leader addressing the transition from prototype to production with AI. Explicitly covers moving from exploratory vibe coding to structured engineering.
 
 **Stream coding difference:** Parallel discovery of similar principles. Osmani approaches from web development; stream coding from product development. Both conclude: systematic methodology beats ad-hoc prompting.
+
+### Alexio Cassani
+**Cassani, A. (2025).** [*Code Revealed: Leading Software Development in the Age of AI Agents.*](https://www.amazon.it/Code-Revealed-Leading-Software-Development-ebook/dp/B0FZ4MW7JK/)
+
+Enterprise leadership guide for CTOs, Engineering Managers, and Team Leaders. Includes 7 proprietary frameworks (RACM, ECF, PAIP, RAUC) for systematic AI integration, team reorganization blueprints, and governance frameworks. Written with feedback from 38 industry professionals.
+
+**Stream coding difference:** Cassani addresses *how to lead teams* through AI transformation. Stream coding addresses *how to build products* as a founder or small team. Complementary audiences: if you're managing 50 developers, read Cassani. If you're a solo founder shipping an MVP, read this manifesto.
 
 ---
 
