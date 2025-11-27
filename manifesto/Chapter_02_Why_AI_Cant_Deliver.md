@@ -17,7 +17,7 @@ Let me show you exactly what I mean.
 
 Before we dive into AI's limitations, let's be clear about what AI actually excels at:
 
-**AI's Superpowers:** Execution from clear specifications (100x faster than humans), generating consistent boilerplate without fatigue, and following established patterns flawlessly.
+**AI's Superpowers:** Execution from clear specifications (100x faster than humans at code generation), generating consistent boilerplate without fatigue, and following established patterns flawlessly.
 
 Here's a concrete example: During the 5Levels build, I needed 46 intelligence endpoints (77 total across the backend). I wrote complete specifications—exact request/response formats, validation rules, error codes. Traditional timeline: 6-8 weeks. AI timeline: 4.5 hours of systematic generation. That's what actually happened. AI generated production-ready endpoints with 100% test coverage, consistent patterns, zero bugs in the generation itself.
 

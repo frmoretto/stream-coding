@@ -205,7 +205,7 @@ Every decision creates a document. Every document is AI-ready: specific, actiona
 
 **Example from 5Levels — Including the Mistake:**
 
-During Phase 1, I spent 3 days analyzing data architecture. I chose single PostgreSQL on the backend. It seemed right. I documented the rationale, moved on, and executed the October sprint perfectly—7 modules, 4.5 hours, zero bugs.
+During Phase 1, I spent days analyzing data architecture. I chose single PostgreSQL on the backend. It seemed right. I documented the rationale, moved on, and executed the October sprint perfectly—7 modules, 4.5 hours, zero bugs in each module.
 
 Then I ran the numbers for production scale. Server costs would eat 60% of revenue. The architecture was wrong.
 
@@ -379,7 +379,7 @@ Phase 3 (Execution): 4.5 hours (~12%)
 - Code: ~8,000 lines
 
 Phase 4 (Quality): Concurrent (~4%)
-- Zero bugs in production
+- Zero bugs in code generated
 - 100% test pass rate
 - Zero divergence between spec and code
 ```
@@ -442,6 +442,63 @@ The name "stream coding" sounds like it's about speed. It's not. It's about docu
 **It's not tool-dependent**
 
 Stream coding works with Claude, ChatGPT, Cursor, Copilot, or whatever exists next year. The methodology is about what you give to AI, not which AI you use.
+
+## Where Stream Coding Excels (And Where It Doesn't)
+
+Stream coding isn't universal. It has a sweet spot—and honest limitations outside that spot.
+
+### The Sweet Spot
+
+| Layer | Stream Coding Fit | Why |
+|-------|------------------|-----|
+| **Backend API** | ★★★★★ Perfect | Specifications translate directly to code. HTTP contracts, request/response formats, validation rules—all precisely specifiable. |
+| **Database Schema** | ★★★★★ Perfect | Tables, columns, constraints, indexes—completely deterministic. Zero ambiguity. |
+| **Business Logic** | ★★★★★ Perfect | Rules, calculations, workflows—if you can specify the logic clearly, AI executes flawlessly. |
+| **Frontend Architecture** | ★★★★☆ Strong | Component hierarchy, state management, API integration, routing—all specifiable. Stream coding works well here. |
+| **State Management** | ★★★★☆ Strong | Redux patterns, React Context, data flow—specifications work. Some iteration needed for complex state transitions. |
+| **Visual Design/CSS** | ★★☆☆☆ Limited | "Make it look good" is not a specification. Pixel-perfect design requires visual iteration AI can't do from text alone. |
+| **UX Polish** | ★★☆☆☆ Limited | Micro-interactions, animations, responsive behavior—requires human aesthetic judgment and iterative refinement. |
+
+### The Frontend Reality
+
+The 5Levels case study focused on backend intelligence modules—the perfect domain for stream coding. Why? Because backend systems are fundamentally about *behavior* (what the system does), not *appearance* (how it looks).
+
+Frontend has both:
+- **Behavioral layer:** Component logic, state management, API calls, routing → Stream coding works
+- **Visual layer:** Layout, spacing, colors, typography, animations → Stream coding struggles
+
+**The Two-Pass Frontend Approach:**
+
+For frontend, you need two AI passes:
+
+**Pass 1: Behavior (Stream Coding)**
+- Specify component architecture
+- Define state management patterns  
+- Document API integration
+- Establish routing and navigation
+- Use Claude/Cursor with Stream Coding methodology
+
+**Pass 2: Visual Polish (Design Tools)**
+- Use AI visual design tools (MagicPath.ai, v0.dev, Lovable, Bolt.new)
+- Iterate on aesthetics, spacing, responsive behavior
+- Human judgment remains essential for final polish
+
+Stream coding specs the WHAT—component architecture, state management, business logic. Design tools handle the HOW—colors, spacing, visual hierarchy.
+
+### What This Means for Your Project
+
+**If you're building:**
+- **Backend-heavy SaaS:** Stream coding is perfect (5Levels, internal tools, APIs)
+- **Full-stack product:** Use stream coding for backend + frontend behavior; complement with design tools for visuals
+- **Design-heavy product:** Stream coding helps with infrastructure, but you'll spend more time on visual iteration
+
+**The limitation isn't fatal—it's about honest expectations.** Stream coding delivers 10-20x velocity on the behavioral layer. Visual polish still requires iteration, just like it always has.
+
+### The Future
+
+As AI visual design tools improve, this gap will shrink. Tools like MagicPath already generate production-quality React components from screenshots. The methodology itself—strategic thinking → complete specifications → AI execution—will remain constant. The tools will get better at handling the visual domain.
+
+For now, know where stream coding excels (behavior, logic, systems) and where it needs complementary tools (visual design, aesthetic polish).
 
 ## The Fundamental Insight
 

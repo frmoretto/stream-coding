@@ -452,7 +452,7 @@ If you're spending more than 20% of time on coding/debugging:
 
 - **v3.3.1** (Current): Corrected time allocation (40/40/20), added Phase 4, added Rule of Divergence
 - **v3.3**: Added document-type-aware placement, 10/10 AI Coder requirements
-- **v3.1**: "Purity" → "Clarity" terminology, mandatory Clarity Gate
+- **v3.1**: Clearer terminology, mandatory Clarity Gate
 - **v3.0**: Initial Stream Coding methodology
 
 ---

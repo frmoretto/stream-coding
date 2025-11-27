@@ -33,7 +33,9 @@ Stream Coding is a documentation-first methodology that makes AI-generated code 
 **Real Results (5Levels Case Study):**
 - 7 production modules in 4.5 hours
 - 46 intelligence endpoints (77 total backend API)
-- Zero bugs, 21 minutes average per tested module
+- Zero bugs in generated code, 21 minutes average per tested module
+
+*Note: The case study focuses on backend intelligence modules—Stream Coding's sweet spot. For frontend, use the methodology for behavior (components, state, logic) and complement with AI design tools for visuals. See Chapter 4 for details.*
 
 ---
 
@@ -41,13 +43,24 @@ Stream Coding is a documentation-first methodology that makes AI-generated code 
 
 ### 1. Get the Skill
 
-Drop [`SKILL.md`](./SKILL.md) into your AI editor as a system prompt:
+The [`SKILL.md`](./SKILL.md) file is designed for Claude's Skills feature.
 
-- **Cursor:** Add to `.cursorrules`
-- **Windsurf:** Add to project rules
-- **Claude Projects:** Add to project knowledge
+**How to use it:**
 
-The Skill enforces Stream Coding discipline, it will refuse vague requests and steer you toward proper documentation.
+- **Claude Web/Desktop:** Upload via Skills interface (Settings → Features → Skills)
+- **Claude API:** Use the Agent Skills API to load the skill programmatically
+- **Claude Projects:** Alternative—add to project knowledge. Claude will search it when needed, though Skills provide better integration.
+
+**For other AI editors:**
+SKILL.md uses Claude-specific formatting (progressive loading, YAML frontmatter). If you're using Cursor, Windsurf, or other tools, you'll need to adapt it:
+- Extract core principles (Phase structure, Document Types, Clarity Gates)
+- Create a condensed version for your `.cursorrules` or project settings
+- The full methodology lives in the manifesto chapters—use those as reference
+
+**What it does:**
+When loaded as a Claude Skill, it gives Claude the complete Stream Coding framework as a persistent reference. Claude will recognize your documentation structure, understand which phase you're in, and apply appropriate rigor.
+
+The methodology itself is tool-agnostic. The SKILL.md is just the Claude-optimized implementation.
 
 ### 2. Read the Manifesto
 
@@ -89,7 +102,8 @@ Every manual code edit without updating the spec creates **Divergence**—techni
 
 ✅ **Technical founders** building greenfield products  
 ✅ **Solo developers** and small teams (1-5 people)  
-✅ **Anyone tired of AI-generated spaghetti code**
+✅ **Anyone tired of AI-generated spaghetti code**  
+✅ **Backend/business logic focused** (see Chapter 4 for frontend approach)
 
 ❌ Not for large enterprises (see GitHub Spec-Kit, Tessl, Kiro)  
 ❌ Not for hackathons or throwaway prototypes  
