@@ -21,7 +21,7 @@ Before we dive into AI's limitations, let's be clear about what AI actually exce
 
 Here's a concrete example: During the 5Levels build, I needed 46 intelligence endpoints (77 total across the backend). I wrote complete specifications—exact request/response formats, validation rules, error codes. Traditional timeline: 6-8 weeks. AI timeline: 4.5 hours of systematic generation. That's what actually happened. AI generated production-ready endpoints with 100% test coverage, consistent patterns, zero bugs in the generation itself.
 
-But here's what that example glosses over: those specifications took me 2 weeks to create during my strategic thinking phase. The specifications were complete because I had already solved every hard problem. I had decided everything. AI just needed to execute.
+But here's what that example glosses over: those specifications took me in total 5 weeks to create, 4 weeks of strategic thinking + 1 week of documentation writing. The specifications were complete because I had already solved every hard problem. I had decided everything. AI just needed to execute.
 
 And that's the critical distinction: **AI can execute brilliantly from clear specifications. But AI cannot ideate those specifications.**
 
