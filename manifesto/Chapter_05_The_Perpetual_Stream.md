@@ -191,7 +191,11 @@ This isn't charity. It's validation. The manifesto has one case study (mine). We
 
 The methodology you've just learned is encoded in a single file: `SKILL.md`
 
-Drop it into your AI editor (Cursor, Windsurf, Cline, Roo Code) as a system prompt or `.cursorrules` file. It will:
+**For Claude users:** Load it as a Skill (Settings → Features → Skills) to give Claude the complete Stream Coding framework as persistent reference.
+
+**For other AI editors (Cursor, Windsurf, etc.):** SKILL.md uses Claude-specific formatting. Extract core principles and create a condensed version for your `.cursorrules` or project settings. The full methodology lives in the manifesto chapters—use those as reference.
+
+When properly integrated, it will:
 - Refuse vague requests and steer you toward Phase 1/2
 - Enforce document architecture (strategic docs point, implementation docs contain)
 - Demand deep links instead of vague references
