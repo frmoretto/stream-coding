@@ -71,7 +71,7 @@ Ask yourself: "If I gave this doc to an AI with no other context, would it produ
 
 ---
 
-*For the complete AI Coder Understandability scoring rubric and document architecture templates, see [Appendix C](../manifesto/Appendix_C_Advanced_v3.3.md).*
+*For the complete AI Coder Understandability scoring rubric and document architecture templates, see [Appendix C](../manifesto/advanced/Advanced_Framework_v3.3.md).*
 
 ---
 
