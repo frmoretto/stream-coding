@@ -1,0 +1,45 @@
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+._*
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.vs/
+
+# Temporary files
+*.tmp
+*.bak
+*.log
+~$*
+
+# Build artifacts
+build/
+dist/
+output/
+*.pdf
+*.epub
+*.mobi
+
+# Affinity Publisher files (if using for book layout)
+*.afpub~
+*.afpub.autosave
+
+# Node modules (if using for any tooling)
+node_modules/
+
+# Python (if using for any scripts)
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+
+# Compiled scripts
+*.exe
+*.dll
