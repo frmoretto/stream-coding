@@ -107,13 +107,26 @@ The methodology was complete but lean. Systematic but practical. Teachable from 
 
 ## The Market Has Spoken
 
-In Fall 2025, the methodology gap became undeniable. GitHub launched Spec Kit in September—an open-source specification-driven development framework. One month later, three more tools followed: Kiro IDE, Specific.dev, and Cursor's major update. Four major releases in eight weeks, all converging on the same solution: specifications as primary artifacts.
+In Fall/Winter 2025, the methodology gap became undeniable. Six major specification-driven development frameworks converged in four months:
+
+| Release | Framework | Approach |
+|---------|-----------|----------|
+| **September 2025** | GitHub Spec Kit | Open-source SDD framework |
+| **October 2025** | Kiro IDE | Spec-first IDE with task orchestration |
+| **October 2025** | Specific.dev | SaaS specification platform |
+| **October 2025** | Cursor | AI IDE with spec-aware features |
+| **November 2025** | Stream Coding | Tool-agnostic methodology + Clarity Gate |
+| **December 2025** | Gemini Conductor | Google's "Context-Driven Development" |
+
+Six independent teams. Same conclusion: **specifications as primary artifacts.**
 
 This isn't coincidence. This is market consensus.
 
-But each solves a fragment. GitHub's framework is high-friction to implement. Kiro focuses on task orchestration without strategic thinking. Cursor delivers speed without methodology. 
+But each solves a fragment. GitHub's framework is high-friction to implement. Kiro focuses on task orchestration without strategic thinking. Cursor delivers speed without methodology. Conductor manages workflow state but has no pre-execution verification.
 
-Stream Coding delivers the complete framework: Strategic thinking → AI-ready documentation → rapid execution → quality control. Not fragments. The proven, systematic methodology.
+Stream Coding delivers the complete framework: Strategic thinking → AI-ready documentation → Clarity Gate → rapid execution → quality control.
+
+Not fragments. The proven, systematic methodology with the only pre-execution verification gate in the industry.
 
 Gene Kim and Steve Yegge's 2025 book *Vibe Coding* documents the conversational approach to AI development—and catalogs comprehensive failure patterns: Context Amnesia (AI forgets instructions), Instruction Drift (deviates from requirements), and Eldritch Code Horror (incomprehensible but functional code). These patterns emerge from iterative conversation without systematic specification. Stream Coding prevents them through documentation-first methodology where complete specifications eliminate context saturation and instruction drift before code generation begins.
 

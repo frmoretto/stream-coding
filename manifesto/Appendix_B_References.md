@@ -11,10 +11,13 @@ Stream coding didn't emerge in a vacuum. It's part of a broader industrial respo
 
 | Player | Focus | Limitation |
 |--------|-------|------------|
-| **GitHub Spec-Kit (2025)** | Workflow automation for generating specifications | Tool-focused, not complete methodology |
+| **GitHub Spec-Kit (Sept 2025)** | Workflow automation for generating specifications | Tool-focused, not complete methodology |
+| **Amazon Kiro (Oct 2025)** | Spec-driven IDE for AI code generation | Enterprise-scale, significant workflow overhead |
+| **Specific.dev (Oct 2025)** | SaaS specification management platform | Platform-dependent, ongoing subscription |
+| **Cursor (Oct 2025)** | AI IDE with spec-aware features | Speed-focused, no strategic methodology |
+| **Gemini Conductor (Dec 2025)** | Google's "Context-Driven Development" for CLI | Gemini-specific, no pre-execution verification |
 | **Tessl (2024)** | AI-native development platform, specification-first | Platform-dependent, requires specific infrastructure |
 | **JetBrains (2024-2025)** | IDE integration with specification-aware AI | Tool enhancement, not systematic methodology |
-| **Amazon Kiro (2025)** | Spec-driven IDE for AI code generation | Enterprise-scale, significant workflow overhead |
 
 **The pattern is clear:** The industry recognizes that AI needs specifications to deliver quality. Multiple companies are building tools to support SDD workflows.
 
@@ -216,6 +219,7 @@ Stream coding is one documented path among many—optimized specifically for fou
 
 **On Spec-Driven Development:**
 - GitHub Engineering Blog: "Introducing Spec-Kit" (2025)
+- Google Developers Blog: ["Conductor: Introducing Context-Driven Development"](https://developers.googleblog.com/en/conductor-introducing-context-driven-development-for-gemini-cli/) (December 2025)
 - Böckeler, B.: "Understanding Spec-Driven Development" (martinfowler.com, October 2025)
 
 **On Vibe Coding vs. Systematic Development:**

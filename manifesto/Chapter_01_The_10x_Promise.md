@@ -34,7 +34,7 @@ Developer satisfaction with AI tools actually *dropped*—from 70% in 2023 to 60
 
 Projects still took months to complete. MVPs still required 4-6 months. Solo founders still struggled to ship before running out of runway. The project timelines—the metric that actually mattered for business success—remained virtually unchanged.
 
-Here's a real scenario that played out thousands of times in 2024:
+Here's a real scenario that played out thousands of times in 2024/2025:
 
 A technical founder using Cursor started building a SaaS product. Week 1: AI generated the database schema in hours instead of days. Week 2: AI created 50 API endpoints in a week instead of a month. Week 3-4: AI built frontend components at blazing speed.
 

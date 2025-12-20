@@ -105,7 +105,7 @@ Every manual code edit without updating the spec creates **Divergence**—techni
 ✅ **Anyone tired of AI-generated spaghetti code**  
 ✅ **Backend/business logic focused** (see Chapter 4 for frontend approach)
 
-❌ Not for large enterprises (see GitHub Spec-Kit, Tessl, Kiro)  
+❌ Not for large enterprises (see GitHub Spec-Kit, Kiro, Gemini Conductor)  
 ❌ Not for hackathons or throwaway prototypes  
 ❌ Not for teams who can't commit to documentation-first
 
