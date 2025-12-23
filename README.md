@@ -1,6 +1,8 @@
-# Stream Coding
+# Stream Coding v3.4
 
 **The 10-20x Methodology for AI-Accelerated Software Development**
+
+> 📢 **v3.4 Update:** Complete 13-item Clarity Gate (was 5 items), scoring rubric, Documentation Audit. Re-download if using older version.
 
 > *"Stream coding isn't about faster coding. It's about documentation so clear that code writes itself."*
 
