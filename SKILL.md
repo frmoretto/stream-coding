@@ -1,18 +1,18 @@
 ---
 name: stream-coding
-description: Documentation-first development methodology. The goal is AI-ready documentation - when docs are clear enough, code generation becomes automatic. Triggers on "Build", "Create", "Implement", "Document", or "Spec out". Version 3.3 adds 10/10 AI Coder requirements with document-type-aware placement (Anti-patterns, Test Cases, Error Handling in implementation docs; Deep Links in all docs).
+description: Documentation-first development methodology. The goal is AI-ready documentation - when docs are clear enough, code generation becomes automatic. Triggers on "Build", "Create", "Implement", "Document", or "Spec out". Version 3.4 adds complete 13-item Clarity Gate with scoring rubric and self-assessment.
 ---
 
-# Stream Coding v3.3: Documentation-First Development
+# Stream Coding v3.4: Documentation-First Development
 
 ## ⚠️ CRITICAL REFRAME: THIS IS A DOCUMENTATION METHODOLOGY, NOT A CODING METHODOLOGY
 
-**Version 3.3 Paradigm Shift:** The goal of Stream Coding is NOT faster coding. The goal is **AI-ready documentation**. When documentation is clear enough, code generation becomes automatic.
+**The Goal:** AI-ready documentation. When documentation is clear enough, code generation becomes automatic.
 
 **The Insight:**
 > "If your docs are good enough, AI writes the code. The hard work IS the documentation. Code is just the printout."
 
-**v3.3 Addition:** Documents must score 10/10 on AI Coder Understandability. This requires mandatory sections placed in the CORRECT document type (see Section: Document Type Architecture).
+**v3.4 Core Addition:** Complete 13-item Clarity Gate with scoring rubric. The gate is the methodology—skip it and you're back to vibe coding.
 
 ---
 
@@ -22,8 +22,9 @@ description: Documentation-first development methodology. The goal is AI-ready d
 |---------|---------|
 | 3.0 | Initial Stream Coding methodology |
 | 3.1 | Clearer terminology, mandatory Clarity Gate |
-| 3.3 | +4 mandatory sections with **document-type-aware placement** |
+| 3.3 | Document-type-aware placement (Anti-patterns, Test Cases, Error Handling in implementation docs) |
 | 3.3.1 | Corrected time allocation (40/40/20), added Phase 4, added Rule of Divergence |
+| **3.4** | **Complete 13-item Clarity Gate, scoring rubric with weights, self-assessment questions, 4 mandatory section templates, Documentation Audit integrated into Phase 1** |
 
 ---
 
@@ -50,9 +51,11 @@ Clear Docs → Clear Specs → AI Executes → Minimal Rework → 10-20x Velocit
 
 ---
 
-## 🆕 DOCUMENT TYPE ARCHITECTURE (v3.3 Critical Addition)
+## DOCUMENT TYPE ARCHITECTURE
 
-**The Insight:** Not all documents need all v3.3 sections. Putting implementation details in strategic documents violates single-source-of-truth.
+**The Rule:** Not all documents need all sections. Putting implementation details in strategic documents violates single-source-of-truth.
+
+> "If AI has to decide where to find information, you've already lost velocity."
 
 ### Document Types
 
@@ -62,7 +65,7 @@ Clear Docs → Clear Specs → AI Executes → Minimal Rework → 10-20x Velocit
 | **Implementation** | HOW | Technical Specs, API docs, Module specs, Architecture docs |
 | **Reference** | Lookup | Schema Reference, Glossary, Configuration |
 
-### v3.3 Section Placement Matrix
+### Section Placement Matrix
 
 | Section | Strategic Docs | Implementation Docs | Reference Docs |
 |---------|---------------|---------------------|----------------|
@@ -77,7 +80,7 @@ Clear Docs → Clear Specs → AI Executes → Minimal Rework → 10-20x Velocit
 ```
 Master Blueprint
 ├── Strategy content
-├── Anti-patterns ← WRONG: duplicates Technical Annex
+├── Anti-patterns ← WRONG: duplicates Technical Spec
 ├── Test Cases ← WRONG: duplicates Testing doc
 └── Error Matrix ← WRONG: duplicates Error Handling doc
 ```
@@ -87,101 +90,27 @@ Master Blueprint
 Master Blueprint (Strategic)
 ├── Strategy content
 └── References
-    └── Pointer: "Anti-patterns → Part 07, 08, 18"
+    └── Pointer: "Anti-patterns → Technical Spec, Section 7"
 
-Technical Annex (Implementation)
+Technical Spec (Implementation)
 ├── Implementation details
-├── Anti-patterns ← CORRECT: lives with specs
-├── Test Cases ← CORRECT: lives with specs
-└── Error Matrix ← CORRECT: lives with specs
-```
-
-### Strategic Document Template
-
-```markdown
-## [N]. REFERENCES
-
-All cross-references use deep links.
-
-**v3.3 Implementation Details Location:**
-| Content Type | Location |
-|--------------|----------|
-| Anti-patterns | [Part XX: Relevant Annex] |
-| Test Case Specifications | [Part XX: Testing] |
-| Error Handling Matrix | [Part XX: Error Handling] |
-
-*This document provides strategic overview. Technical documents provide implementation specifications.*
-
-### [N].1 Schema References
-| Topic | Location | Anchor |
-|-------|----------|--------|
-| ... | ... | ... |
-
-### [N].2 Technical References
-| Topic | Document | Section |
-|-------|----------|---------|
-| ... | ... | ... |
-```
-
-### Implementation Document Template
-
-```markdown
-## [N]. ANTI-PATTERNS (DO NOT)
-
-### [N].1 [Domain] Anti-patterns
-| ❌ Don't | ✅ Do Instead | Why |
-|----------|---------------|-----|
-| ... | ... | ... |
-
-## [N+1]. TEST CASE SPECIFICATIONS
-
-### [N+1].1 Unit Tests
-| Test ID | Component | Input | Expected Output | Edge Cases |
-|---------|-----------|-------|-----------------|------------|
-| ... | ... | ... | ... | ... |
-
-### [N+1].2 Integration Tests
-| Test ID | Flow | Setup | Verification | Teardown |
-|---------|------|-------|--------------|----------|
-| ... | ... | ... | ... | ... |
-
-## [N+2]. ERROR HANDLING MATRIX
-
-### [N+2].1 External Service Errors
-| Error Type | HTTP Code | User Message | Log Level | Recovery |
-|------------|-----------|--------------|-----------|----------|
-| ... | ... | ... | ... | ... |
-
-### [N+2].2 Business Logic Errors
-| Error Type | Trigger | Message | Suggested Action |
-|------------|---------|---------|------------------|
-| ... | ... | ... | ... |
-
-## [N+3]. REFERENCES (Deep Links)
-
-### [N+3].1 Internal References
-| Topic | Section | Anchor |
-|-------|---------|--------|
-| ... | ... | ... |
-
-### [N+3].2 External Dependencies
-| Dependency | Documentation | Version |
-|------------|---------------|---------|
-| ... | ... | ... |
+├── Anti-patterns ← CORRECT: lives here
+├── Test Cases ← CORRECT: lives here
+└── Error Matrix ← CORRECT: lives here
 ```
 
 ---
 
 ## THE 4-PHASE METHODOLOGY
 
-### Time Allocation (v3.3.1 Corrected)
+### Time Allocation
 
 | Phase | Time | Focus |
 |-------|------|-------|
 | Phase 1: Strategic Thinking | 40% | WHAT to build, WHY it matters |
 | Phase 2: AI-Ready Documentation | 40% | HOW to build (specs so clear AI has zero decisions) |
 | Phase 3: Execution | 15% | Code generation + implementation |
-| Phase 4: Quality & Iteration | 5% | Testing, refinement, continuous improvement |
+| Phase 4: Quality & Iteration | 5% | Testing, refinement, divergence prevention |
 
 **The Counterintuitive Truth:** 80% of time goes to documentation. 20% to code. This is why velocity is 10-20x—not because coding is faster, but because rework approaches zero.
 
@@ -189,19 +118,67 @@ All cross-references use deep links.
 
 ## PHASE 1: STRATEGIC THINKING (40% of time)
 
+### Decision Tree: Where Do You Start?
+
+```
+Phase 1: Strategic Product Thinking
+│
+├─ Have existing documentation?
+│   └─ YES → Start with Documentation Audit → then 7 Questions
+│
+└─ Starting fresh?
+    └─ Skip to 7 Questions
+```
+
+### Documentation Audit (Conditional)
+
+**Skip this step if starting from scratch.** The Documentation Audit only applies when you have existing documentation—previous specs, inherited docs, or accumulated notes.
+
+**Why clean existing docs?** Because most documentation accumulates cruft:
+- Aspirational statements ("We will revolutionize...")
+- Speculative futures ("In 2030, we might...")
+- Outdated decisions (v1 architecture in v3 docs)
+- Duplicate information across files
+- Motivational fluff with no implementation value
+
+**The Audit Process:**
+
+Apply the Clarity Test to all existing documentation:
+
+| Check | Question |
+|-------|----------|
+| **Actionable** | Can AI act on this? If aspirational, delete it. |
+| **Current** | Is this still the decision? If changed, update or remove. |
+| **Single Source** | Is this said elsewhere? Consolidate to one place. |
+| **Decision** | Is this decided? If not, don't include it. |
+| **Prompt-Ready** | Would you put this in an AI prompt? If not, delete. |
+
+**Audit Checklist:**
+- [ ] Remove all "vision" and "future state" language
+- [ ] Delete motivational conclusions and preambles
+- [ ] Consolidate duplicate information to single source
+- [ ] Update all outdated architectural decisions
+- [ ] Remove speculative features not in current scope
+
+**Target:** 40-50% reduction in volume without losing actionable information.
+
+Once clean, proceed to the 7 Questions.
+
+---
+
 ### The 7 Questions Framework
 
-Before ANY documentation, answer these with specificity:
+Before ANY new documentation, answer these with specificity. Vague answers = vague code.
 
 | # | Question | ❌ Reject | ✅ Require |
 |---|----------|-----------|------------|
-| 1 | What exact problem? | "Help users manage tasks" | "[Persona] achieves [outcome] in [context]" |
-| 2 | Success metrics? | "Users save time" | "100 users, 25% conversion, 3 months" |
-| 3 | Why will you win? | "Better UI" | Structural advantage (architecture, data, model) |
-| 4 | Architecture decision? | Let AI decide | Human decides with trade-off analysis |
-| 5 | Tech stack rationale? | "I like Node.js" | "Node—team expertise, ship fast" |
-| 6 | MVP features? | 10+ "must-haves" | 3-5 essential, rest explicitly deferred |
-| 7 | What are you NOT building? | "We'll see" | Explicit exclusions with rationale |
+| 1 | What exact problem are you solving? | "Help users manage tasks" | "Help [specific persona] achieve [measurable outcome] in [specific context]" |
+| 2 | What are your success metrics? | "Users save time" | Numbers + timeline: "100 users, 25% conversion, 3 months" |
+| 3 | Why will you win? | "Better UI and features" | Structural advantage: architecture, data moat, business model |
+| 4 | What's the core architecture decision? | "Let AI decide" | Human decides based on explicit trade-off analysis |
+| 5 | What's the tech stack rationale? | "Node.js because I like it" | Business rationale: "Node—team expertise, ship fast" |
+| 6 | What are the MVP features? | 10+ "must-have" features | 3-5 truly essential, rest explicitly deferred |
+| 7 | What are you NOT building? | "We'll see what users want" | Explicit exclusions with rationale |
 
 ### Phase 1 Exit Criteria
 
@@ -214,41 +191,215 @@ Before ANY documentation, answer these with specificity:
 
 ## PHASE 2: AI-READY DOCUMENTATION (40% of time)
 
-### The Clarity Test
+### The 4 Mandatory Sections (Implementation Docs)
 
-Before moving to Phase 3, every spec must pass:
+Every implementation document MUST include these four sections. Without them, AI guesses—and guessing creates the velocity mirage.
 
-| Check | Question |
-|-------|----------|
-| **Actionable** | Does every section dictate a specific implementation detail? |
-| **Current** | Is everything up-to-date (no outdated decisions)? |
-| **Single Source** | Is every decision recorded in only one place? |
-| **Decision, Not Wish** | Is every statement a decision, not a hope? |
-| **Prompt-Ready** | Would you paste this directly into an AI prompt? |
+#### 1. Anti-Patterns Section
 
-### The 10/10 AI Coder Test (v3.3)
+**Why:** AI needs to know what NOT to do.
 
-**Question:** "If I gave this document to a new developer (human or AI) with no other context, could they implement it correctly?"
+```markdown
+## Anti-Patterns (DO NOT)
+
+| ❌ Don't | ✅ Do Instead | Why |
+|----------|---------------|-----|
+| Store timestamps as Date objects | Use ISO 8601 strings | Serialization issues |
+| Hardcode configuration values | Use environment variables | Deployment flexibility |
+| Use generic error messages | Specific error codes per failure | Debugging impossible otherwise |
+| Skip validation on internal calls | Validate everything | Internal calls can have bugs too |
+| Expose internal IDs in APIs | Use UUIDs or slugs | Security and flexibility |
+```
+
+**Rules:** Minimum 5 anti-patterns per implementation document.
+
+#### 2. Test Case Specifications
+
+**Why:** AI needs concrete verification criteria.
+
+```markdown
+## Test Case Specifications
+
+### Unit Tests Required
+| Test ID | Component | Input | Expected Output | Edge Cases |
+|---------|-----------|-------|-----------------|------------|
+| TC-001 | Tier classifier | 100 contacts | 20-30 in Critical tier | Empty list, all same score |
+| TC-002 | Score calculator | Activity array | Score 0-100 | No events, >1000 events |
+
+### Integration Tests Required
+| Test ID | Flow | Setup | Verification | Teardown |
+|---------|------|-------|--------------|----------|
+| IT-001 | Auth flow | Create test user | Token refresh works | Delete test user |
+```
+
+**Rules:** Minimum 5 unit tests, 3 integration tests per component.
+
+#### 3. Error Handling Matrix
+
+**Why:** AI needs to know how to handle every failure mode.
+
+```markdown
+## Error Handling Matrix
+
+### External Service Errors
+| Error Type | Detection | Response | Fallback | Logging | Alert |
+|------------|-----------|----------|----------|---------|-------|
+| API timeout | >5s response | Retry 3x exponential | Return cached | ERROR | If 3 in 5 min |
+| Rate limit | 429 response | Pause 15 min | Queue for retry | WARN | If >5/hour |
+
+### User-Facing Errors
+| Error Type | User Message | Code | Recovery Action |
+|------------|--------------|------|-----------------|
+| Quota exceeded | "You've used all checks this month." | 403 | Show upgrade CTA |
+| Session expired | "Please sign in again." | 401 | Redirect to login |
+```
+
+**Rules:** Every external service and user-facing error must be specified.
+
+#### 4. Deep Links (All Document Types)
+
+**Why:** AI needs to navigate to exact locations. "See Technical Annexes" is useless.
+
+```markdown
+## References
+
+### Schema References
+| Topic | Location | Anchor |
+|-------|----------|--------|
+| User profiles | [Schema Reference](../schemas/schema.md#user_profiles) | `user_profiles` |
+| Events table | [Schema Reference](../schemas/schema.md#events) | `events` |
+
+### Implementation References
+| Topic | Document | Section |
+|-------|----------|---------|
+| Auth flow | [API Spec](../specs/api.md#authentication) | Section 3.2 |
+| Rate limiting | [API Spec](../specs/api.md#rate-limiting) | Section 5 |
+```
+
+**Rules:** NEVER use vague references. ALWAYS include document path + section anchor.
+
+---
+
+## ⚠️ THE CLARITY GATE (v3.4 - COMPLETE)
+
+**⛔ NEVER SKIP THIS GATE.**
+
+This is the difference between stream coding and vibe coding. A 7/10 spec generates 7/10 code that needs 30% rework.
+
+### The 13-Item Clarity Gate Checklist
+
+Before ANY code generation, verify ALL items pass:
+
+#### Foundation Checks (7 items)
+
+| # | Check | Question |
+|---|-------|----------|
+| 1 | **Actionable** | Can AI act on every section? (No aspirational content) |
+| 2 | **Current** | Is everything up-to-date? (No outdated decisions) |
+| 3 | **Single Source** | No duplicate information across docs? |
+| 4 | **Decision, Not Wish** | Every statement is a decision, not a hope? |
+| 5 | **Prompt-Ready** | Would you put every section in an AI prompt? |
+| 6 | **No Future State** | All "will eventually," "might," "ideally" language removed? |
+| 7 | **No Fluff** | All motivational/aspirational content removed? |
+
+#### Document Architecture Checks (6 items - v3.3 Critical)
+
+| # | Check | Question |
+|---|-------|----------|
+| 8 | **Type Identified** | Document type clearly marked? (Strategic vs Implementation vs Reference) |
+| 9 | **Anti-patterns Placed** | Anti-patterns in implementation docs only? (Strategic docs have pointers) |
+| 10 | **Test Cases Placed** | Test cases in implementation docs only? (Strategic docs have pointers) |
+| 11 | **Error Handling Placed** | Error handling matrix in implementation docs only? |
+| 12 | **Deep Links Present** | Deep links in ALL documents? (No vague "see elsewhere") |
+| 13 | **No Duplicates** | Strategic docs use pointers, not duplicate content? |
+
+### Gate Enforcement
+
+```
+- [ ] All 7 Foundation Checks pass
+- [ ] All 6 Document Architecture Checks pass
+- [ ] AI Coder Understandability Score ≥ 9/10
+
+If ANY item fails → Fix before proceeding to Phase 3
+```
+
+---
+
+## AI CODER UNDERSTANDABILITY SCORING
+
+Use this rubric to score documentation. Target: 9+/10 before Phase 3.
+
+### The 6-Criterion Rubric
+
+| Criterion | Weight | 10/10 Requirement |
+|-----------|--------|-------------------|
+| **Actionability** | 25% | Every section has Implementation Implication |
+| **Specificity** | 20% | All numbers concrete, all thresholds explicit |
+| **Consistency** | 15% | Single source of truth, no duplicates across docs |
+| **Structure** | 15% | Tables over prose, clear hierarchy, predictable format |
+| **Disambiguation** | 15% | Anti-patterns present (5+ per impl doc), edge cases explicit |
+| **Reference Clarity** | 10% | Deep links only, no vague references |
+
+### Score Interpretation
 
 | Score | Meaning | Action |
 |-------|---------|--------|
-| 10/10 | Zero questions needed | Ready for Phase 3 |
-| 9/10 | 1 minor clarification | Fix, then proceed |
-| 7-8/10 | Several gaps | Revise documentation |
-| <7/10 | Major gaps | Stay in Phase 2 |
+| 10/10 | AI can implement with zero clarifying questions | Proceed to Phase 3 |
+| 9/10 | 1 minor clarification needed | Fix, then proceed |
+| 7-8/10 | 3-5 ambiguities exist | Major revision required |
+| <7/10 | Not AI-ready, fundamental issues | Return to Phase 2 |
 
-### The Clarity Gate (Mandatory)
+### Self-Assessment Questions
 
-**⛔ NEVER skip this gate.**
+Before Phase 3, ask yourself:
 
-Before ANY code generation:
+1. **Actionability:** "Does every section tell AI exactly what to do?"
+2. **Specificity:** "Are there any numbers I left vague?"
+3. **Consistency:** "Is any information stated in more than one place?"
+4. **Structure:** "Could I convert any prose paragraphs to tables?"
+5. **Disambiguation:** "Have I listed at least 5 anti-patterns per implementation doc?"
+6. **Reference Clarity:** "Do any references say 'see elsewhere' without exact location?"
 
-1. Run Clarity Test on every document
-2. Score each document 1-10
-3. Fix anything below 9/10
-4. Re-score until all pass
+If you answer "no" or "yes" to any question that should be opposite → Fix before proceeding.
 
-**Why This Matters:** Every point below 10 = debugging hours later. A 7/10 document generates 7/10 code that needs 30% rework.
+---
+
+## AI-ASSISTED CLARITY GATE (Meta-Prompt)
+
+Use this prompt to have Claude score your documentation:
+
+```markdown
+**ROLE:** You are the Clarity Gatekeeper. Your job is to ruthlessly 
+evaluate software specifications for ambiguity, incompleteness, and 
+"vibe coding" tendencies.
+
+**INPUT:** I will provide a technical specification document.
+
+**TASK:** Grade this document on a scale of 1-10 using this rubric:
+
+**RUBRIC:**
+1. **Actionability (25%):** Does every section dictate a specific 
+   implementation detail? (Reject aspirational like "fast" or 
+   "scalable" without metrics)
+2. **Specificity (20%):** Are data types, error codes, thresholds, 
+   and edge cases explicitly defined? (Reject "handle errors appropriately")
+3. **Consistency (15%):** Single source of truth? No duplicates?
+4. **Structure (15%):** Tables over prose? Clear hierarchy?
+5. **Disambiguation (15%):** Anti-patterns present? Edge cases explicit?
+6. **Reference Clarity (10%):** Deep links only? No vague references?
+
+**OUTPUT FORMAT:**
+1. **Score:** [X]/10
+2. **Criterion Breakdown:** Score each of the 6 criteria
+3. **Hallucination Risks:** List specific lines where an AI developer 
+   would have to guess or make an assumption
+4. **The Fix:** Rewrite the 3 most ambiguous sections into AI-ready specs
+
+**THRESHOLD:** 
+- 9-10: Ready for code generation
+- 7-8: Needs revision before proceeding
+- <7: Return to Phase 2
+```
 
 ---
 
@@ -257,22 +408,12 @@ Before ANY code generation:
 ### The Generate-Verify-Integrate Loop
 
 ```
-┌─────────────────────────────────────────────────────┐
-│                                                     │
-│  1. GENERATE                                        │
-│     Feed spec to AI → Receive code                  │
-│                                                     │
-│  2. VERIFY                                          │
-│     Run tests → Check against spec                  │
-│     Does output match spec exactly?                 │
-│     - Yes → Continue                                │
-│     - No → Fix SPEC first, then regenerate          │
-│                                                     │
-│  3. INTEGRATE                                       │
-│     Commit → Update documentation if needed         │
-│     (But prefer spec fixes over code patches)       │
-│                                                     │
-└─────────────────────────────────────────────────────┘
+1. GENERATE: Feed spec to AI → Receive code
+2. VERIFY: Run tests → Check against spec
+   - Does output match spec exactly?
+   - Yes → Continue
+   - No → Fix SPEC first, then regenerate
+3. INTEGRATE: Commit → Update documentation if needed
 ```
 
 ### The Golden Rule of Phase 3
@@ -291,15 +432,14 @@ If generated code doesn't work:
 
 ## PHASE 4: QUALITY & ITERATION (5% of time)
 
-### The Rule of Divergence (v3.3.1)
+### The Rule of Divergence
 
-**Definition:** Divergence occurs when code and documentation don't match.
+> **Every time you manually edit AI-generated code without updating the spec, you create Divergence. Divergence is technical debt.**
 
-```
-Every manual edit without updating the spec = Divergence debt
-Divergence debt compounds like financial debt
-Eventually: Spec becomes fiction, AI becomes useless
-```
+**Why Divergence is Dangerous:**
+- If you fix a bug in code but not spec, you can never regenerate that module
+- Future AI iterations will reintroduce the bug
+- You've broken the stream
 
 ### Preventing Divergence
 
@@ -308,153 +448,227 @@ Eventually: Spec becomes fiction, AI becomes useless
 | Bug in generated code | Fix code manually | Fix spec, regenerate |
 | Missing edge case | Add code patch | Add to spec, regenerate |
 | Performance issue | Optimize code | Document constraint, regenerate |
-| "Quick fix" needed | Just this once... | No. Fix spec. |
+| "Quick fix" needed | "Just this once..." | No. Fix spec. |
 
-### When Manual Edits Are Acceptable
+### The "Day 2" Workflow
 
-Only when:
-1. **AND** the change is spec-conformant (doesn't deviate from intent)
-2. **AND** you immediately update the spec to match
-3. **AND** you document why regeneration wasn't practical
+1. **Isolate the Module:** Target the specific module, not the whole app
+2. **Update the Spec:** Add the new edge case, requirement, or fix
+3. **Regenerate the Module:** Feed updated spec to AI
+4. **Verify Integration:** Run test suite for regressions
 
-Even then, prefer regeneration. Manual edits are technical debt.
+This takes 5 minutes longer than a quick hotfix. But it ensures your documentation never drifts from reality.
 
 ---
 
 ## TRIGGER BEHAVIOR
 
 This methodology activates when the user says:
-- "Build [feature]"
-- "Create [component]"
-- "Implement [system]"
-- "Document [project]"
-- "Spec out [feature]"
+- "Build [feature]" → Full methodology (Phases 1-4)
+- "Create [component]" → Full methodology
+- "Implement [system]" → Check: Do clear docs exist?
+- "Document [project]" → Phases 1-2 only
+- "Spec out [feature]" → Phases 1-2 only
+- "Clean up docs for [X]" → Documentation Audit only
 
 ### Response Protocol
 
-1. **Check Phase:** Where is this project in the 4-phase journey?
+1. **Check for existing docs:** "Do you have existing documentation for this project?"
+2. **If existing docs:** "Let's start with a Documentation Audit to clean them before building."
+3. **If Phase 1 incomplete:** "Before building, let's clarify strategy. [Ask 7 Questions]"
+4. **If Phase 2 incomplete:** "Before coding, let's ensure documentation is AI-ready. [Run Clarity Gate]"
+5. **If Clarity Gate not passed:** "Documentation scores [X]/10. Let's fix [specific issues] before proceeding."
+6. **If Phase 3 ready:** "Documentation passes Clarity Gate (9+/10). Generating implementation..."
+7. **If maintaining (Phase 4):** "Is this change spec-conformant? Let's update docs first."
 
-2. **If Phase 1 incomplete:**
-   - "Before building, let's clarify strategy. [Ask 7 Questions]"
+---
 
-3. **If Phase 2 incomplete:**
-   - "Before coding, let's ensure documentation is AI-ready. [Run Clarity Test]"
+## THE STREAM CODING CONTRACT
 
-4. **If Phase 3 ready:**
-   - "Documentation looks complete. Generating implementation..."
+### YOU MUST:
 
-5. **If maintaining (Phase 4):**
-   - "Is this change spec-conformant? Let's update docs first if needed."
+**Documentation Audit (if existing docs):**
+- [ ] Run Clarity Test on all existing documentation
+- [ ] Remove aspirational/future state language
+- [ ] Consolidate duplicates to single source
+- [ ] Target 40-50% reduction without losing actionable content
+
+**Phase 1:**
+- [ ] Answer all 7 questions at "Require" level
+- [ ] Create Strategic Blueprint with Implementation Implications
+- [ ] Write ADRs for major architectural decisions
+
+**Phase 2:**
+- [ ] Identify document type (Strategic vs Implementation vs Reference)
+- [ ] Add 4 mandatory sections to each implementation doc
+- [ ] Add deep links to ALL documents
+- [ ] Use pointers (not duplicates) in strategic docs
+
+**Clarity Gate:**
+- [ ] Pass all 13 checklist items
+- [ ] Score 9+/10 on AI Coder Understandability
+- [ ] Answer all 6 self-assessment questions correctly
+
+**Phase 3-4:**
+- [ ] Show code before creating files
+- [ ] Run quality gates (lint, type, test)
+- [ ] When code fails: fix spec, regenerate
+- [ ] Never create divergence (update spec with every code change)
+
+### YOU CANNOT:
+
+- ❌ Build on existing docs without running Documentation Audit first
+- ❌ Skip to coding without clear docs
+- ❌ Accept vague specs ("handle errors appropriately")
+- ❌ Skip Clarity Gate (even if you wrote the docs yourself)
+- ❌ Put Anti-patterns/Test Cases/Error Handling in strategic docs
+- ❌ Use vague references ("see Technical Annexes")
+- ❌ Duplicate content across document types
+- ❌ Iterate on code when problem is in spec
+- ❌ Edit code without updating spec (creates Divergence)
 
 ---
 
 ## DOCUMENT TEMPLATES
 
-### Strategic Blueprint Template
+### Strategic Document Template
 
 ```markdown
-# [PROJECT NAME] - Strategic Blueprint
+# [Document Title] (Strategic)
 
-## 1. Problem Statement
-**Specific Problem:** [Measurable, painful problem]
-**Target User:** [Precise persona]
-**Success Looks Like:** [Concrete metrics]
+## 1. [Strategic Section]
+[Strategic content]
 
-## 2. Solution Overview
-**Core Insight:** [Why this approach wins]
-**Key Differentiator:** [Structural advantage]
+**Implementation Implication:** [Concrete effect on code/architecture]
 
-## 3. Architecture Decisions
-| Decision | Choice | Rationale | Trade-offs |
-|----------|--------|-----------|------------|
-| Database | [X] | [Why] | [Accepted downsides] |
-| Framework | [X] | [Why] | [Accepted downsides] |
+## 2. [Another Section]
+[Strategic content]
 
-## 4. MVP Scope
-**Must Have (v1.0):**
-1. [Feature 1]
-2. [Feature 2]
-3. [Feature 3]
+**Implementation Implication:** [Concrete effect on code/architecture]
 
-**Explicitly Deferred:**
-- [Feature X] - Because [rationale]
-- [Feature Y] - Because [rationale]
+## N. REFERENCES
 
-## 5. References
+### Implementation Details Location
 | Content Type | Location |
 |--------------|----------|
-| Anti-patterns | [Technical Spec, Section X] |
-| Test Specifications | [Testing Doc, Section Y] |
-| Error Handling | [Error Matrix, Section Z] |
+| Anti-patterns | [Technical Spec, Section 7](path#anchor) |
+| Test Cases | [Testing Doc, Section 3](path#anchor) |
+| Error Handling | [Error Handling Doc](path#anchor) |
+
+### Schema References
+| Topic | Location | Anchor |
+|-------|----------|--------|
+| [Topic] | [Path](path#anchor) | `anchor` |
+
+*This document provides strategic overview. Technical documents provide implementation specifications.*
 ```
 
-### Architecture Decision Record (ADR) Template
+### Implementation Document Template
 
 ```markdown
-# ADR-[NUMBER]: [TITLE]
+# [Document Title] (Implementation)
 
-## Status
-[Proposed | Accepted | Deprecated | Superseded]
+## 1. [Implementation Section]
+[Technical details]
 
-## Context
-[What is the situation? What forces are at play?]
+## N-3. ANTI-PATTERNS (DO NOT)
 
-## Decision
-[What decision was made?]
+| ❌ Don't | ✅ Do Instead | Why |
+|----------|---------------|-----|
+| [Anti-pattern] | [Correct approach] | [Reason] |
 
-## Rationale
-[Why this choice over alternatives?]
+## N-2. TEST CASE SPECIFICATIONS
 
-## Consequences
-**Positive:**
-- [Benefit 1]
-- [Benefit 2]
+### Unit Tests
+| Test ID | Component | Input | Expected Output | Edge Cases |
+|---------|-----------|-------|-----------------|------------|
+| TC-XXX | [Component] | [Input] | [Output] | [Edge cases] |
 
-**Negative:**
-- [Trade-off 1]
-- [Trade-off 2]
+### Integration Tests
+| Test ID | Flow | Setup | Verification | Teardown |
+|---------|------|-------|--------------|----------|
+| IT-XXX | [Flow] | [Setup] | [Verify] | [Cleanup] |
 
-## Alternatives Considered
-| Option | Pros | Cons | Why Rejected |
-|--------|------|------|--------------|
-| [A] | ... | ... | ... |
-| [B] | ... | ... | ... |
+## N-1. ERROR HANDLING MATRIX
+
+| Error Type | Detection | Response | Fallback | Logging |
+|------------|-----------|----------|----------|---------|
+| [Error] | [How detected] | [Response] | [Fallback] | [Level] |
+
+## N. REFERENCES
+
+| Topic | Location | Anchor |
+|-------|----------|--------|
+| [Topic] | [Path](path#anchor) | `anchor` |
 ```
 
 ---
 
 ## QUICK REFERENCE
 
-### Phase Checklist
+### The 13-Item Clarity Gate
 
-- [ ] **Phase 1:** 7 Questions answered, Strategic Blueprint complete
-- [ ] **Phase 2:** All specs pass Clarity Test (9+/10), Clarity Gate passed
-- [ ] **Phase 3:** Generate-Verify-Integrate loop, fix specs not code
-- [ ] **Phase 4:** Rule of Divergence enforced, specs match reality
+**Foundation (7):**
+1. Actionable? 2. Current? 3. Single source? 4. Decision not wish?
+5. Prompt-ready? 6. No future state? 7. No fluff?
 
-### The Core Mantras
+**Architecture (6):**
+8. Type identified? 9. Anti-patterns placed correctly? 10. Test cases placed correctly?
+11. Error handling placed correctly? 12. Deep links present? 13. No duplicates?
+
+### The Scoring Rubric
+
+| Criterion | Weight |
+|-----------|--------|
+| Actionability | 25% |
+| Specificity | 20% |
+| Consistency | 15% |
+| Structure | 15% |
+| Disambiguation | 15% |
+| Reference Clarity | 10% |
+
+### Time Allocation
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│ Have existing docs? → Documentation Audit (conditional)     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  Phase 1 (Strategy): 40% ──┐                                │
+│  Phase 2 (Specs): 40% ─────┼── 80% Documentation            │
+│                            │                                │
+│  ⚠️ CLARITY GATE ──────────┘                                │
+│                            │                                │
+│  Phase 3 (Code): 15% ──────┼── 20% Code                     │
+│  Phase 4 (Quality): 5% ────┘                                │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
+
+### Core Mantras
 
 1. "Documentation IS the work. Code is just the printout."
 2. "When code fails, fix the spec—not the code."
-3. "Every manual edit without updating the spec = Divergence debt."
-4. "A 7/10 spec generates 7/10 code that needs 30% rework."
-
-### Time Reality Check
-
-If you're spending more than 20% of time on coding/debugging:
-- Your documentation isn't clear enough
-- Go back to Phase 2
-- The 40/40/20 split is not optional
+3. "A 7/10 spec generates 7/10 code that needs 30% rework."
+4. "If AI has to decide where to find information, you've already lost velocity."
 
 ---
 
-## VERSION HISTORY
+**Version:** 3.4
+**Changes from 3.3.1:**
+- Complete 13-item Clarity Gate (was 5 items)
+- Scoring rubric with 6 weighted criteria
+- Self-assessment questions before Phase 3
+- AI-assisted scoring meta-prompt included
+- 4 mandatory section templates with examples
+- Phase 1 questions with reject/require examples
+- Documentation Audit integrated into Phase 1 (replaces "Phase 0")
 
-- **v3.3.1** (Current): Corrected time allocation (40/40/20), added Phase 4, added Rule of Divergence
-- **v3.3**: Added document-type-aware placement, 10/10 AI Coder requirements
-- **v3.1**: Clearer terminology, mandatory Clarity Gate
-- **v3.0**: Initial Stream Coding methodology
+**Core Insight:** The Clarity Gate is the methodology. Everything else supports getting docs to 9+/10.
 
 ---
 
-*Stream Coding by Francesco Marinoni Moretto (github.com/frmoretto/stream-coding) — CC BY 4.0*
+*Stream Coding by Francesco Marinoni Moretto — CC BY 4.0*
+*github.com/frmoretto/stream-coding*
+
+**END OF STREAM CODING v3.4**
