@@ -41,28 +41,35 @@ Stream Coding is a documentation-first methodology that makes AI-generated code 
 
 ## Quick Start
 
-### 1. Get the Skill
+### Option 1: claude.ai / Claude Desktop
 
-The [`SKILL.md`](./SKILL.md) file is designed for Claude's Skills feature.
+1. Download [`stream-coding.zip`](stream-coding.zip)
+2. Go to Settings → Features → Skills → Add
+3. Upload the zip file
+4. Ask Claude: *"Build a user authentication system"*
 
-**How to use it:**
+### Option 2: Claude Code
 
-- **Claude Web/Desktop:** Upload via Skills interface (Settings → Features → Skills)
-- **Claude API:** Use the Agent Skills API to load the skill programmatically
-- **Claude Projects:** Alternative—add to project knowledge. Claude will search it when needed, though Skills provide better integration.
+1. Copy `SKILL.md` to your project's skills folder
+2. Claude Code will automatically detect and use it
+3. Ask Claude: *"Build a user authentication system"*
 
-**For other AI editors:**
-SKILL.md uses Claude-specific formatting (progressive loading, YAML frontmatter). If you're using Cursor, Windsurf, or other tools, you'll need to adapt it:
-- Extract core principles (Phase structure, Document Types, Clarity Gates)
-- Create a condensed version for your `.cursorrules` or project settings
-- The full methodology lives in the manifesto chapters—use those as reference
+### Option 3: Claude Projects
 
-**What it does:**
-When loaded as a Claude Skill, it gives Claude the complete Stream Coding framework as a persistent reference. Claude will recognize your documentation structure, understand which phase you're in, and apply appropriate rigor.
+Add [`SKILL.md`](SKILL.md) to project knowledge. Claude will search it when needed, though Skills provide better integration.
 
-The methodology itself is tool-agnostic. The SKILL.md is just the Claude-optimized implementation.
+### Option 4: Manual / Other LLMs
 
-### 2. Read the Manifesto
+For Cursor, Windsurf, or other AI tools:
+- Extract core principles (Phases, Document Types, Clarity Gate)
+- Create a condensed version for `.cursorrules` or project settings
+- Use the [templates](./templates) and [Clarity Gate Checklist](./templates/CLARITY_GATE_CHECKLIST.md) as reference
+
+The methodology is tool-agnostic—only SKILL.md is Claude-optimized.
+
+---
+
+### Read the Manifesto
 
 The [`/manifesto`](./manifesto) folder contains the complete methodology:
 
@@ -78,13 +85,15 @@ The [`/manifesto`](./manifesto) folder contains the complete methodology:
 | [Appendix C](./manifesto/Appendix_C_5Levels_Case_Study.md) | 5Levels Case Study (Git-Verified) |
 | [Advanced Framework](./manifesto/advanced/Advanced_Framework_v3.3.md) | Document Architecture (v3.3) |
 
-### 3. Use the Templates
+### Use the Templates
 
 The [`/templates`](./templates) folder contains ready-to-use frameworks:
 
-- **Strategic Blueprint** — Answer the 7 Phase 1 Questions
-- **ADR Template** — Document architecture decisions with rationale
-- **Clarity Gate Checklist** — The mandatory Phase 2→3 gate
+| Template | Purpose |
+|----------|--------|
+| [Strategic Blueprint](./templates/STRATEGIC_BLUEPRINT.md) | Answer the 7 Phase 1 Questions |
+| [ADR Template](./templates/ADR_TEMPLATE.md) | Document architecture decisions with rationale |
+| [Clarity Gate Checklist](./templates/CLARITY_GATE_CHECKLIST.md) | The mandatory Phase 2→3 gate |
 
 ---
 
@@ -120,6 +129,16 @@ Stream Coding aligns with industry research:
 - **METR (2025):** Developers 19% slower with AI despite *feeling* 20% faster
 
 The methodology isn't magic, it's systematic application of spec-driven development at founder scale.
+
+---
+
+## Related
+
+**Clarity Gate** — Pre-ingestion verification for epistemic quality (originated from Stream Coding's Clarity Gate concept)  
+[github.com/frmoretto/clarity-gate](https://github.com/frmoretto/clarity-gate)
+
+**Source of Truth Creator** — Create epistemically calibrated documents  
+[github.com/frmoretto/source-of-truth-creator](https://github.com/frmoretto/source-of-truth-creator)
 
 ---
 
