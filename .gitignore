@@ -20,11 +20,15 @@ desktop.ini
 
 # Build artifacts
 build/
-dist/
 output/
 *.pdf
 *.epub
 *.mobi
+
+# Distribution (keep .skill files for releases)
+!dist/
+dist/*
+!dist/*.skill
 
 # Affinity Publisher files (if using for book layout)
 *.afpub~

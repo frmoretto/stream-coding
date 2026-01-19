@@ -1,0 +1,38 @@
+{
+  "$schema": "https://claude.ai/schemas/plugin-manifest-v1.json",
+  "name": "stream-coding",
+  "version": "3.4.0",
+  "description": "Documentation-first development methodology. AI-ready docs = automatic code generation. 10-20x velocity.",
+  "author": "Francesco Marinoni Moretto",
+  "license": "CC-BY-4.0",
+  "repository": "https://github.com/frmoretto/stream-coding",
+  "homepage": "https://github.com/frmoretto/stream-coding",
+  "keywords": [
+    "stream-coding",
+    "documentation-first",
+    "methodology",
+    "clarity-gate",
+    "ai-ready",
+    "specs",
+    "10x-velocity"
+  ],
+  "skills": [
+    {
+      "name": "stream-coding",
+      "path": "skills/stream-coding/SKILL.md",
+      "triggers": [
+        "stream coding",
+        "documentation-first",
+        "build",
+        "create",
+        "implement",
+        "document",
+        "spec out"
+      ]
+    }
+  ],
+  "compatibility": {
+    "claude-code": ">=1.0.0",
+    "claude-desktop": ">=1.0.0"
+  }
+}

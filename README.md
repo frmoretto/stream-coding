@@ -2,7 +2,11 @@
 
 **The 10-20x Methodology for AI-Accelerated Software Development**
 
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+
 > 📢 **v3.4 Update:** Complete 13-item Clarity Gate (was 5 items), scoring rubric, Documentation Audit. Re-download if using older version.
+
+> ✅ **This methodology built 7 production modules in 4.5 hours** ([5Levels Case Study](./manifesto/Appendix_C_5Levels_Case_Study.md), Git-verified)
 
 > *"Stream coding isn't about faster coding. It's about documentation so clear that code writes itself."*
 
@@ -43,24 +47,43 @@ Stream Coding is a documentation-first methodology that makes AI-generated code 
 
 ## Quick Start
 
-### Option 1: claude.ai / Claude Desktop
+### Option 1: Claude.ai / Claude Desktop
 
-1. Download [`stream-coding.zip`](stream-coding.zip)
+1. Download [`stream-coding.skill`](dist/stream-coding.skill)
 2. Go to Settings → Features → Skills → Add
-3. Upload the zip file
+3. Upload the `.skill` file
 4. Ask Claude: *"Build a user authentication system"*
 
 ### Option 2: Claude Code
 
-1. Copy `SKILL.md` to your project's skills folder
-2. Claude Code will automatically detect and use it
-3. Ask Claude: *"Build a user authentication system"*
+Clone the repo — Claude Code auto-detects skills in `.claude/skills/`:
+
+```bash
+git clone https://github.com/frmoretto/stream-coding
+cd stream-coding
+# Claude Code will automatically detect .claude/skills/stream-coding/SKILL.md
+```
+
+Or copy `.claude/skills/stream-coding/` to your project's `.claude/skills/` directory.
+
+Ask Claude: *"Build a user authentication system"*
 
 ### Option 3: Claude Projects
 
 Add [`SKILL.md`](SKILL.md) to project knowledge. Claude will search it when needed, though Skills provide better integration.
 
-### Option 4: Manual / Other LLMs
+### Option 4: OpenAI Codex / GitHub Copilot
+
+Copy the canonical skill to the appropriate directory:
+
+| Platform | Location |
+|----------|----------|
+| OpenAI Codex | `.codex/skills/stream-coding/SKILL.md` |
+| GitHub Copilot | `.github/skills/stream-coding/SKILL.md` |
+
+Use [`skills/stream-coding/SKILL.md`](skills/stream-coding/SKILL.md) (agentskills.io format).
+
+### Option 5: Manual / Other LLMs
 
 For Cursor, Windsurf, or other AI tools:
 - Extract core principles (Phases, Document Types, Clarity Gate)
@@ -71,7 +94,7 @@ The methodology is tool-agnostic—only SKILL.md is Claude-optimized.
 
 ---
 
-### Read the Manifesto
+## Read the Manifesto
 
 The [`/manifesto`](./manifesto) folder contains the complete methodology:
 
@@ -111,14 +134,51 @@ Every manual code edit without updating the spec creates **Divergence**—techni
 
 ## Who This Is For
 
-✅ **Technical founders** building greenfield products  
-✅ **Solo developers** and small teams (1-5 people)  
-✅ **Anyone tired of AI-generated spaghetti code**  
-✅ **Backend/business logic focused** (see Chapter 4 for frontend approach)
+- ✅ **Technical founders** building greenfield products
+- ✅ **Solo developers** and small teams (1-5 people)
+- ✅ **Anyone tired of AI-generated spaghetti code**
+- ✅ **Backend/business logic focused** (see Chapter 4 for frontend approach)
 
-❌ Not for large enterprises (see GitHub Spec-Kit, Kiro, Gemini Conductor)  
-❌ Not for hackathons or throwaway prototypes  
-❌ Not for teams who can't commit to documentation-first
+- ❌ Not for large enterprises (see GitHub Spec-Kit, Kiro, Gemini Conductor)
+- ❌ Not for teams who can't commit to documentation-first
+
+---
+
+## Where Stream Coding Fits
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│  AI-Assisted Development Landscape                              │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  Layer 3: Enterprise SDD    GitHub Spec-Kit, Kiro, Conductor    │
+│           (teams 50+)       Full lifecycle, heavy process       │
+│                                                                 │
+│  Layer 2: Founder SDD  ◄──  STREAM CODING                       │
+│           (teams 1-5)       Documentation-first, AI-ready specs │
+│                                                                 │
+│  Layer 1: AI Assistants     Copilot, Cursor, Claude Code        │
+│           (task-level)      Fast typing, no methodology         │
+│                                                                 │
+│  Layer 0: Manual Coding     Traditional development             │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+**The Gap:** Layer 1 tools make coding 55% faster but don't solve the methodology problem. Enterprise tools (Layer 3) are overkill for founders. Stream Coding fills the middle.
+
+---
+
+## Competitive Positioning
+
+| Dimension | AI Assistants (Copilot) | Stream Coding | Enterprise SDD (Kiro) |
+|-----------|------------------------|---------------|----------------------|
+| **Target** | Individual developers | Founders, small teams | Large enterprises |
+| **Focus** | Task velocity | Project velocity | Process compliance |
+| **Cost** | $10-20/mo | Free | Enterprise pricing |
+| **Methodology** | None | 4-phase, Clarity Gate | Full SDLC |
+| **Documentation** | Optional | Mandatory (80% of time) | Mandatory |
+| **AI Role** | Code suggestions | Spec execution | Workflow automation |
 
 ---
 
@@ -144,11 +204,27 @@ The methodology isn't magic, it's systematic application of spec-driven developm
 
 ---
 
+## Roadmap
+
+| Phase | Status | Description |
+|-------|--------|-------------|
+| **v3.4** | ✅ Released | 13-item Clarity Gate, scoring rubric, Documentation Audit |
+| **v3.5** | 🔜 Planned | Integration with Clarity Gate verification system |
+| **v4.0** | 🔜 Planned | Multi-agent workflow support, automated spec validation |
+
+---
+
 ## Contributing
 
 Stream Coding is open source under CC BY 4.0. You're free to use, adapt, and share with attribution.
 
-Found an improvement? Open an issue or PR.
+Looking for:
+1. **Real-world case studies** — Applied Stream Coding to your project?
+2. **Tool integrations** — Cursor, Windsurf, other AI tools
+3. **Methodology feedback** — Are the 4 phases the right split?
+4. **Template improvements** — Better Strategic Blueprint, ADR formats
+
+Open an issue or PR.
 
 ---
 
