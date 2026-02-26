@@ -221,12 +221,18 @@ If you find fewer, state explicitly why the spec is unusually strong.
 
 ### What Counts as "Different AI"
 
-| Option | Notes |
-|--------|-------|
-| Gemini (Google) | Best for logical contradictions |
-| GPT-4o (OpenAI) | Good for missing considerations |
-| Perplexity | Useful for factual/credibility checks |
-| Trusted human (senior dev) | Highest signal, highest effort |
+**Rule: always use a different provider than your primary workflow. Same provider = confirmation bias.**
+
+**This step is intentionally manual** — paste specs into a different chat and apply the adversarial prompt. No API key or integration required.
+
+| Option | Access | Notes |
+|--------|--------|-------|
+| GPT-5.2 / GPT-5.3 (ChatGPT) | Chat — no API key needed | Strong general reasoning; GPT-5.3-Codex excellent for code-spec gaps |
+| Gemini 3 Pro / 3.1 (AI Studio) | Chat — no API key needed | 1M context; good at logical contradictions across long specs |
+| GitHub Copilot (IDE chat) | In-editor | Convenient; GPT-5.x based; no context switch needed |
+| o3 / o4-mini (ChatGPT) | Chat or API | Best for finding logical holes and edge cases |
+| Perplexity | Chat | Useful for factual/credibility checks |
+| Trusted human (senior dev) | — | Highest signal, highest effort |
 
 **Never use the same Claude session** that helped write the docs. Start a fresh session at minimum — different model preferred.
 
