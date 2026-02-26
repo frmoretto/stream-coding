@@ -70,7 +70,7 @@ This feels backwards until you realize: that 80% documentation time eliminates 9
 
 ## The Phases
 
-Stream coding has four phases, plus a mandatory gate:
+Stream coding has five phases, with mandatory gates between them:
 
 **Phase 1: Strategic Product Thinking**
 - Duration: **40%** of total timeline
@@ -85,21 +85,27 @@ Stream coding has four phases, plus a mandatory gate:
 - Value created: 10x multiplier for Phase 3
 - Focus: Capturing strategic decisions in executable specifications
 
-**⚠️ CLARITY GATE (MANDATORY)**
-- When: After Phase 2, before Phase 3
+**⚠️ SPEC GATE (MANDATORY)**
+- When: After Phase 2, before Phase 2.5
 - Duration: Hours to 1 day
-- Purpose: Verify YOUR documentation passes the Clarity Test
+- Purpose: Verify YOUR documentation passes all 13 structural checks
 - Never skip: This gate prevents the velocity mirage
-- *See **Appendix A** for the checklist; **[Advanced Framework](./advanced/Advanced_Framework_v3.3.md)** for the 13-item version*
+- *See **Appendix A** for the checklist; **[Advanced Framework](./advanced/Advanced_Framework.md)** for the complete version*
+
+**Phase 2.5: Adversarial Review**
+- Duration: **5%** of total timeline
+- Code written: 0 lines
+- Value created: Finds spec failures before there's any code to fail
+- Focus: Submit specs to a different AI model or human reviewer to stress-test them
 
 **Phase 3: AI-Accelerated Execution**
-- Duration: **15%** of total timeline
+- Duration: **10%** of total timeline
 - Code written: 90%+ of production codebase
 - Value created: Automatic implementation of solved problems
 - Focus: Systematic code generation with continuous quality gates
 
 **Phase 4: Quality-Controlled Iteration**
-- Duration: **5%** of total timeline (concurrent with Phase 3)
+- Duration: **5%** of total timeline
 - Code written: Refinements only
 - Value created: Production-ready quality, zero divergence
 - Focus: When code fails, fix the spec—not the code
@@ -118,7 +124,7 @@ Phase 1: Strategic Product Thinking
 
 The Clarity Test appears twice in stream coding:
 1. **Documentation Audit** (if you have existing docs): Clean inherited documentation before building on it
-2. **Clarity Gate** (always): Verify YOUR Phase 2 output before AI touches it
+2. **Spec Gate** (always): Verify YOUR Phase 2 output before AI touches it
 
 Let me explain each phase.
 
@@ -154,7 +160,7 @@ Once clean, proceed to Problem Definition.
 The Clarity Test is the quality gate that prevents the velocity mirage. You apply it:
 
 1. **Documentation Audit** (if you have existing docs): Clean inherited documentation
-2. **Clarity Gate** (always): Verify Phase 2 output before Phase 3
+2. **Spec Gate** (always): Verify Phase 2 output before Phase 3
 
 **The Five Questions:**
 
@@ -269,7 +275,7 @@ When AI receives this specification, it has no decisions to make. It knows exact
 
 Phase 2 takes 40% of project time. This feels like a lot for "just documentation." But this documentation is doing the work that would otherwise happen during debugging.
 
-Phase 2 doesn't mean writing 24 files by hand. You can use AI to expand your Phase 1 decisions into verbose specifications — then verify them through the Clarity Gate before Phase 3.
+Phase 2 doesn't mean writing 24 files by hand. You can use AI to expand your Phase 1 decisions into verbose specifications — then verify them through the Spec Gate before Phase 3.
 
 Every hour in Phase 2 saves 5-10 hours in Phase 3. The math always works out.
 
@@ -309,7 +315,7 @@ The stream coding fix takes 30 seconds longer. But now your spec and code are al
 
 **Phase 3 Duration:**
 
-15% of total project time. Yes, really.
+10% of total project time. Yes, really.
 
 During 5Levels, Phase 3 took 4.5 hours for 7 modules, 46 endpoints, and ~8,000 lines of production code. That's not a typo. That's what happens when documentation is clear and specifications are complete.
 
@@ -334,12 +340,14 @@ This is why Phase 4 is small. When specifications are complete, first-pass code 
 
 ## The Complete Timeline
 
-**Ideal Time Allocation (40/40/20):**
+**Ideal Time Allocation (40/40/5/10/5):**
 - Phase 1 (Strategy): 40%
-- Phase 2 (Specs): 40%  
-- Phases 3+4 (Code + Quality): 20%
+- Phase 2 (Specs): 40%
+- Phase 2.5 (Adversarial Review): 5%
+- Phase 3 (Code): 10%
+- Phase 4 (Quality): 5%
 
-*Real projects vary. The 5Levels example below shows Phase 1 extended to ~67% due to business model validation and strategic pivots—and because Phase 1 was part-time work while running other businesses. A founder working full-time on Phase 1 would compress this significantly. The principle holds: 80% documentation, 20% code. The 40/40/20 is a starting framework, not a prescription. Your ratio will vary based on domain complexity, existing knowledge, and available time.*
+*Real projects vary. The 5Levels example below shows Phase 1 extended to ~67% due to business model validation and strategic pivots—and because Phase 1 was part-time work while running other businesses. A founder working full-time on Phase 1 would compress this significantly. The principle holds: 80% documentation, 20% code. The 40/40/5/10/5 is a starting framework, not a prescription. Your ratio will vary based on domain complexity, existing knowledge, and available time.*
 
 Let me make this concrete with actual 5Levels numbers:
 
@@ -366,7 +374,7 @@ Phase 2 (Documentation): 1 week (~17%)
 - Code: ~500 lines of examples
 - NOTE: Compressed; ideal is 40%
 
-⚠️ CLARITY GATE: 4 hours
+⚠️ SPEC GATE: 4 hours
 - Verified 9+/10 AI Coder Understandability
 - Caught 3 specs with "future state" language
 - Fixed before proceeding to Phase 3
@@ -396,7 +404,7 @@ Notice the ratio: 5+ weeks of thinking and documentation. 4.5 hours of execution
 
 That's 80/20 in practice. 80% documentation. 20% code generation. And the 20% that's code generation? Most of it is automatic.
 
-**For a greenfield project**, the Documentation Audit step wouldn't apply. You'd start directly with Strategic Decisions. But the Clarity Gate after Phase 2 is always mandatory.
+**For a greenfield project**, the Documentation Audit step wouldn't apply. You'd start directly with Strategic Decisions. But the Spec Gate after Phase 2 is always mandatory.
 
 ## Why This Creates 10-20x Velocity
 
@@ -433,7 +441,7 @@ Result: 10-20x velocity on execution. And because execution is now 20% of timeli
 
 **It's not "just plan more"**
 
-Stream coding isn't generic advice. It's a specific methodology with phases, templates, and quality gates. "Plan better" is vague. "Run the Documentation Audit, document all decisions in specification format, pass the Clarity Gate, iterate on specs not code" is systematic.
+Stream coding isn't generic advice. It's a specific methodology with phases, templates, and quality gates. "Plan better" is vague. "Run the Documentation Audit, document all decisions in specification format, pass the Spec Gate, iterate on specs not code" is systematic.
 
 **It's not about velocity—it's about clarity**
 

@@ -1,7 +1,7 @@
 # APPENDIX C: ADVANCED FRAMEWORK
-## Document Architecture & Quality Scoring (v3.3)
+## Document Architecture & Quality Scoring (v3.5)
 
-*"The difference between 3x velocity and 10-20x velocity isn't effort—it's documentation architecture. This appendix shows how to structure documents so AI has zero decisions to make."*
+*"The difference between 3x velocity and 10-20x velocity isn't effort—it's documentation architecture. This appendix shows how to structure documents so AI has zero decisions to make—and how to stress-test specs before any code is written."*
 
 ---
 
@@ -258,14 +258,14 @@ Before entering Phase 3 (code generation), score your documentation on this rubr
 
 | Score | Meaning | Action |
 |-------|---------|--------|
-| 9-10 | AI can implement with zero clarifying questions | Proceed to Phase 3 |
+| 9-10 | AI can implement with zero clarifying questions | Proceed to Phase 2.5 |
 | 7-8 | AI needs 3-5 clarifications | Improve weak areas |
 | 5-6 | AI needs significant guidance | Major revision needed |
 | <5 | Documentation not AI-ready | Return to Phase 2 |
 
 ### Self-Assessment Questions
 
-Before Phase 3, ask yourself:
+Before Phase 2.5, ask yourself:
 
 1. **Actionability:** "Does every section tell AI exactly what to do?"
 2. **Specificity:** "Are there any numbers I left vague?"
@@ -276,9 +276,9 @@ Before Phase 3, ask yourself:
 
 ---
 
-## 5. THE COMPLETE CLARITY GATE CHECKLIST (v3.3)
+## 5. THE COMPLETE SPEC GATE CHECKLIST (v3.5)
 
-This replaces the basic 5-item checklist. Use this before Phase 3.
+This is the mandatory structural completeness check. Use it after Phase 2, before Phase 2.5.
 
 ### Foundation Checks
 - [ ] Can AI act on every section? (No aspirational content)
@@ -289,7 +289,7 @@ This replaces the basic 5-item checklist. Use this before Phase 3.
 - [ ] All "future state" language removed?
 - [ ] All motivational/aspirational content removed?
 
-### Document Architecture Checks (v3.3)
+### Document Architecture Checks (v3.5)
 - [ ] Document type identified? (Strategic vs Implementation vs Reference)
 - [ ] Anti-patterns in implementation docs only? (Strategic docs have pointers)
 - [ ] Test cases in implementation/testing docs only? (Strategic docs have pointers)
@@ -300,13 +300,115 @@ This replaces the basic 5-item checklist. Use this before Phase 3.
 ### Quality Threshold
 - [ ] AI Coder Understandability Score ≥ 9/10?
 
-**If ANY item fails:** Fix before proceeding to Phase 3.
+**If ANY item fails:** Fix before proceeding to Phase 2.5.
 
 **NEVER SKIP THIS GATE.** This is the difference between stream coding and vibe coding.
 
+> **Two-gate pipeline:** Spec Gate catches structural completeness. Phase 2.5 Adversarial Review catches correctness. Both are required before Phase 3.
+
 ---
 
-## 6. THE 7 PHASE 1 QUESTIONS
+## 6. PHASE 2.5 ADVERSARIAL REVIEW
+
+After the Spec Gate passes (9+/10), submit specs to a **different** AI model or human reviewer. Never use the same session that helped write the docs.
+
+### The Process
+
+```
+1. Spec Gate passes (9+/10) → proceed to adversarial step
+2. Submit specs to DIFFERENT AI model (Gemini, GPT-4, Perplexity)
+   OR trusted human reviewer
+3. Use the adversarial prompt below
+4. Categorize findings: CRITICAL / HIGH / MEDIUM / LOW
+5. Fix ALL CRITICAL issues → return to Spec Gate → re-score
+6. Document HIGH issues with explicit accept/defer decision
+7. Gate: zero CRITICAL remaining → proceed to Phase 3
+```
+
+**Why a different model:** The AI that generated or reviewed your docs learned your assumptions. A different model has no context, no charitable interpretation, no benefit of the doubt. It finds gaps your primary AI normalizes.
+
+### The Adversarial Prompt Template
+
+```markdown
+You are a skeptical senior developer and hostile critic reviewing
+this specification before it goes to an AI agent for execution.
+
+## Your Mission
+Find every flaw. Assume problems exist — your job is to find them.
+Do not be helpful. Do not suggest minor improvements. Attack the spec.
+
+## What to Look For
+
+### 1. LOGICAL CONTRADICTIONS
+- Claims that conflict with each other within the spec
+- Numbers that don't add up
+- Requirements that are mutually exclusive
+
+### 2. CREDIBILITY RISKS
+- Overclaims ("zero bugs", "always", "never", "guaranteed")
+- Unverifiable statements with no measurement method
+- Claims a hostile reader would immediately challenge
+
+### 3. IMPLICIT DEGREES OF FREEDOM
+- Points where the AI agent must CHOOSE between valid interpretations
+- Anything where two different developers would implement differently
+- Edge cases that are mentioned but not fully specified
+
+### 4. MISSING CONSIDERATIONS
+- Error states that have no specified handling
+- Concurrency or race conditions not addressed
+- External dependencies with no fallback specified
+- Security assumptions not made explicit
+
+### 5. DEFENSIBILITY GAPS
+- "What would a hostile HN commenter use to debunk this?"
+- "What would a junior developer get wrong from this spec?"
+- "What happens when the happy path fails?"
+
+## Output Format
+
+For each issue found:
+**[SEVERITY]** — Issue title
+Location: Where in the spec
+Problem: What exactly is wrong
+Fix: Specific rewrite needed
+
+Severity:
+- **CRITICAL:** Execution will fail or produce wrong output without this fix
+- **HIGH:** Significant risk of incorrect implementation
+- **MEDIUM:** Minor ambiguity, lower risk
+- **LOW:** Polish, not blocking
+
+## Success Criteria
+
+A good adversarial review finds:
+- At least 2 CRITICAL issues (if zero, you haven't looked hard enough)
+- At least 4-5 HIGH issues
+- 10+ total issues across all severities
+
+If you find fewer, state explicitly why the spec is unusually strong.
+```
+
+### Gate Criteria
+
+- [ ] Zero CRITICAL issues remaining
+- [ ] All HIGH issues documented with explicit decision: fix now / accept risk / defer
+- [ ] Spec Gate re-run if any CRITICAL was fixed (score may have changed)
+
+### Which AI to Use
+
+| Option | Notes |
+|--------|-------|
+| Gemini (Google) | Best for logical contradictions |
+| GPT-4o (OpenAI) | Good for missing considerations |
+| Perplexity | Useful for factual/credibility checks |
+| Trusted human (senior dev) | Highest signal, highest effort |
+
+**Never use the same Claude session** that helped write the docs. Start a fresh session at minimum—different model preferred.
+
+---
+
+## 7. THE 7 PHASE 1 QUESTIONS
 
 Phase 1 (Strategic Thinking) requires answering these 7 questions with specificity. Vague answers = vague code.
 
@@ -324,7 +426,7 @@ Phase 1 (Strategic Thinking) requires answering these 7 questions with specifici
 
 ---
 
-## 7. PUTTING IT ALL TOGETHER
+## 8. PUTTING IT ALL TOGETHER
 
 ### The Complete Document Set
 
@@ -358,31 +460,35 @@ For a production project, you need:
    - Add 4 mandatory sections to each implementation doc
    - Add deep links to ALL docs
    - Strategic docs get pointers, not duplicates
-3. Clarity Gate: Score documentation (target 9+/10)
-4. Phase 3 (15%): Feed docs to AI → Code streams out
-5. Phase 4 (5%): When code fails: Fix the spec, not the code → Regenerate
+3. Spec Gate: Score documentation (target 9+/10)
+4. Phase 2.5 (5%): Adversarial Review — submit to different AI, fix ALL CRITICAL issues
+5. Phase 3 (10%): Feed docs to AI → Code streams out
+6. Phase 4 (5%): When code fails: Fix the spec, not the code → Regenerate
 ```
 
-*Ideal split: 40/40/20 (80% docs, 20% code). Real projects flex—strategy-heavy projects may shift to 60/20/20.*
+*Ideal split: 40/40/5/10/5 (80% docs, 15% execution, 5% quality). Real projects flex—strategy-heavy projects may shift to 60/20/5/10/5.*
 
 ---
 
-## SUMMARY: THE V3.3 INSIGHT
+## SUMMARY: THE V3.5 INSIGHT
 
 **v3.0 Insight:** Documentation is the real work. Code is the printout.
 
 **v3.3 Addition:** Not all docs are equal. Strategic docs point. Implementation docs contain. Never duplicate.
 
+**v3.5 Addition:** Structural completeness (Spec Gate) is necessary but not sufficient. Correctness under adversarial review (Phase 2.5) is the final gate before execution.
+
 **The Payoff:**
 - v3.0: 5-10x velocity
 - v3.3: 10-20x velocity (because AI has zero ambiguity about what goes where)
+- v3.5: 10-20x velocity with fewer Phase 3 surprises (because specs are stress-tested before any code is written)
 
-**The Rule:**
-> "If AI has to decide where to find information, you've already lost velocity."
+**The Two-Gate Rule:**
+> "Spec Gate catches completeness. Adversarial Review catches correctness. Both before Phase 3—no exceptions."
 
 ---
 
-**END OF APPENDIX C**
+**END OF APPENDIX C (Advanced Framework v3.5)**
 
 ---
 

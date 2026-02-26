@@ -54,33 +54,36 @@ Here is how you handle maintenance without breaking the stream:
 
 This sounds slower than a quick hotfix. It is—by about 5 minutes. But it ensures that your documentation never drifts from reality. It guarantees that six months from now, you can still iterate at 10x velocity because your "Blueprints" are still accurate.
 
-## The Tool: The Clarity Gate Meta-Prompt
+## The Tool: The Spec Gate Meta-Prompt
 
 The hardest part of Phase 2 (Documentation) is knowing when you are done. How do you know if your spec is truly "AI-Ready"?
 
-In Chapter 4, I introduced the concept of the Clarity Gate—the mandatory checkpoint before execution. To make this actionable, I have developed a "Meta-Prompt."
+In Chapter 4, I introduced the concept of the Spec Gate—the mandatory checkpoint before execution. To make this actionable, I have developed a "Meta-Prompt."
 
 You do not need to guess if your docs are good. You paste this prompt into your AI of choice (Claude, ChatGPT, etc.), followed by your specification file. The AI will grade your work.
 
 ### The Prompt
 
 ```markdown
-**ROLE:** You are the Clarity Gatekeeper. Your job is to ruthlessly evaluate software specifications for ambiguity, incompleteness, and "vibe coding" tendencies.
+**ROLE:** You are the Spec Gatekeeper. Your job is to ruthlessly evaluate software specifications for ambiguity, incompleteness, and "vibe coding" tendencies.
 
 **INPUT:** I will provide a technical specification document.
 
 **TASK:** Grade this document on a scale of 1-10 based on the following "AI Coder Understandability" rubric.
 
 **RUBRIC:**
-1. **Actionability:** Does every section dictate a specific implementation detail? (Reject aspirational language like "fast" or "scalable" without metrics).
-2. **Specificity:** Are data types, error codes, and edge cases explicitly defined? (Reject "handle errors appropriately").
-3. **Single Source of Truth:** Does this reference a schema file for tables, or does it hallucinate new columns?
-4. **Anti-Patterns:** Does it explicitly list what NOT to do?
+1. **Actionability (25%):** Does every section dictate a specific implementation detail? (Reject aspirational language like "fast" or "scalable" without metrics).
+2. **Specificity (20%):** Are data types, error codes, thresholds, and edge cases explicitly defined? (Reject "handle errors appropriately").
+3. **Consistency (15%):** Single source of truth? No duplicate information across docs?
+4. **Structure (15%):** Tables over prose? Clear hierarchy?
+5. **Disambiguation (15%):** Anti-patterns present (5+ per implementation doc)? Edge cases explicit?
+6. **Reference Clarity (10%):** Deep links only? No vague references ("see Technical Annexes")?
 
 **OUTPUT FORMAT:**
 1. **Score:** [X]/10
-2. **The "Hallucination Risk":** List specific lines where an AI developer would have to guess or make an assumption.
-3. **The Fix:** Rewrite the 3 most ambiguous sections into "AI-Ready" specifications.
+2. **Criterion Breakdown:** Score each of the 6 criteria
+3. **Hallucination Risks:** List specific lines where an AI developer would have to guess or make an assumption.
+4. **The Fix:** Rewrite the 3 most ambiguous sections into AI-ready specifications.
 
 If the score is below 9/10, STOP. Do not write code. Demand a rewrite.
 ```
@@ -117,32 +120,33 @@ Stream Coding doesn't replace you; it promotes you.
 
 This shift demands more from you, not less. It demands deeper strategic thinking. It demands that you understand systems, not just syntax. The "Vibe Coders" who rely on AI to do their thinking will be replaced. The "Stream Coders" who use AI to execute their thinking will become the most valuable people in the industry.
 
-## Advanced: Document Architecture (v3.3)
+## Advanced: Document Architecture (v3.5)
 
-For practitioners who want to push velocity even further, Stream Coding v3.3 introduces **Document Type Architecture**—a framework for organizing documentation that eliminates the last sources of AI ambiguity.
+For practitioners who want to push velocity even further, Stream Coding v3.5 introduces **Document Type Architecture** and **Phase 2.5 Adversarial Review**—frameworks that eliminate the last sources of AI ambiguity and spec correctness failures.
 
 The core insight: Not all documents need all sections. Strategic documents (Blueprint, PRD) should *point to* implementation details, not contain them. Implementation documents (Technical Specs, Module Specs) should contain the mandatory sections AI needs: Anti-patterns, Test Cases, Error Handling Matrix, and Deep Links.
 
-When you get this architecture right—strategic docs point, implementation docs contain, nothing duplicates—AI scores 10/10 on understandability. That's when you see 10-20x velocity instead of 5-10x.
+When you get this architecture right—strategic docs point, implementation docs contain, nothing duplicates—AI scores 10/10 on understandability. Then Phase 2.5 stress-tests the specs with a hostile reviewer before execution, catching correctness failures the Spec Gate can't see. That's when you see 10-20x velocity instead of 5-10x.
 
-**See the [Advanced Framework](./advanced/Advanced_Framework_v3.3.md) for the complete v3.3 documentation**, including:
+**See the [Advanced Framework](./advanced/Advanced_Framework.md) for the complete v3.5 documentation**, including:
 - Document Type Architecture (Strategic vs Implementation vs Reference)
 - Section Placement Matrix
 - The four mandatory sections with example tables
 - AI Coder Understandability scoring rubric (25% Actionability, 20% Specificity, 15% Consistency, etc.)
-- Complete 13-item Clarity Gate checklist
+- Complete 13-item Spec Gate checklist
+- Phase 2.5 Adversarial Review process and prompt template
 
 This is optional for your first project. Master the basics first. But know that there's another level available when you're ready.
 
 ## Your Path Forward
 
-The methodology is complete. You understand the Velocity Mirage. You see the Methodology Gap. You have the Four Phases and the Clarity Gate.
+The methodology is complete. You understand the Velocity Mirage. You see the Methodology Gap. You have the Five Phases and the Spec Gate.
 
 Now, you have a choice.
 
 **Path 1: The Solo Experiment (Free)**
 
-Take the templates provided in Appendix A. Pick a greenfield side project. Commit to spending the first week writing zero code. Force yourself to write the Strategic Blueprint and the Schema specs. Use the Clarity Gate prompt above. Feel the difference when you finally hit "Generate."
+Take the templates provided in Appendix A. Pick a greenfield side project. Commit to spending the first week writing zero code. Force yourself to write the Strategic Blueprint and the Schema specs. Use the Spec Gate prompt above. Feel the difference when you finally hit "Generate."
 
 **Path 2: The Deep Dive (Book & Bootcamp)**
 

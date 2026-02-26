@@ -1,28 +1,9 @@
 ---
 name: stream-coding
-version: 3.4.0
-description: >
-  Documentation-first development methodology. The goal is AI-ready
-  documentation - when docs are clear enough, code generation becomes automatic.
-author: Francesco Marinoni Moretto
-license: CC-BY-4.0
-repository: https://github.com/frmoretto/stream-coding
-triggers:
-  - stream coding
-  - documentation-first
-  - build
-  - create
-  - implement
-  - document
-  - spec out
-capabilities:
-  - documentation-methodology
-  - clarity-gate-integration
-  - ai-ready-specs
-spec_version: "3.4"
+description: Documentation-first development methodology. The goal is AI-ready documentation - when docs are clear enough, code generation becomes automatic. Triggers on "Build", "Create", "Implement", "Document", or "Spec out". Version 3.5 adds Phase 2.5 Adversarial Review and renames internal verification to Spec Gate (structural completeness). Clarity Gate is now a separate standalone tool for epistemic quality.
 ---
 
-# Stream Coding v3.4: Documentation-First Development
+# Stream Coding v3.5: Documentation-First Development
 
 ## ⚠️ CRITICAL REFRAME: THIS IS A DOCUMENTATION METHODOLOGY, NOT A CODING METHODOLOGY
 
@@ -31,7 +12,15 @@ spec_version: "3.4"
 **The Insight:**
 > "If your docs are good enough, AI writes the code. The hard work IS the documentation. Code is just the printout."
 
-**v3.4 Core Addition:** Complete 13-item Clarity Gate with scoring rubric. The gate is the methodology—skip it and you're back to vibe coding.
+**v3.5 Core Additions:**
+1. Phase 2.5 Adversarial Review — stress-test specs with a hostile critic before execution. New time allocation: 40/40/5/10/5.
+2. Renamed internal 13-item checklist to **Spec Gate** (structural completeness for code generation)
+
+> **Two-gate pipeline — know the difference:**
+> - **Spec Gate** (13 items, this skill) → *"Can AI execute this without asking questions?"*
+> - **Clarity Gate** (9 points, separate tool) → *"Will AI mistake assumptions for facts?"*
+>
+> Spec Gate → Clarity Gate → Adversarial Review → Verified Specification → Execution
 
 ---
 
@@ -40,10 +29,11 @@ spec_version: "3.4"
 | Version | Changes |
 |---------|---------|
 | 3.0 | Initial Stream Coding methodology |
-| 3.1 | Clearer terminology, mandatory Clarity Gate |
+| 3.1 | Clearer terminology, mandatory Spec Gate |
 | 3.3 | Document-type-aware placement (Anti-patterns, Test Cases, Error Handling in implementation docs) |
 | 3.3.1 | Corrected time allocation (40/40/20), added Phase 4, added Rule of Divergence |
-| **3.4** | **Complete 13-item Clarity Gate, scoring rubric with weights, self-assessment questions, 4 mandatory section templates, Documentation Audit integrated into Phase 1** |
+| 3.4 | Complete 13-item Spec Gate, scoring rubric with weights, self-assessment questions, 4 mandatory section templates, Documentation Audit integrated into Phase 1 |
+| **3.5** | **Phase 2.5 Adversarial Review added. New time allocation: 40/40/5/10/5. Internal 13-item checklist renamed from "Clarity Gate" → "Spec Gate". Two-gate pipeline documented: Spec Gate (structural) + Clarity Gate standalone (epistemic).** |
 
 ---
 
@@ -128,10 +118,117 @@ Technical Spec (Implementation)
 |-------|------|-------|
 | Phase 1: Strategic Thinking | 40% | WHAT to build, WHY it matters |
 | Phase 2: AI-Ready Documentation | 40% | HOW to build (specs so clear AI has zero decisions) |
-| Phase 3: Execution | 15% | Code generation + implementation |
+| **Phase 2.5: Adversarial Review** | **5%** | **Stress-test specs with a hostile critic before execution** |
+| Phase 3: Execution | 10% | Code generation + implementation |
 | Phase 4: Quality & Iteration | 5% | Testing, refinement, divergence prevention |
 
-**The Counterintuitive Truth:** 80% of time goes to documentation. 20% to code. This is why velocity is 10-20x—not because coding is faster, but because rework approaches zero.
+**The logic:** Spending 5% upfront to break specs saves more than 5% in Phase 3 rework. If you bulletproof docs adversarially, execution gets faster — not slower.
+
+---
+
+## PHASE 2.5: ADVERSARIAL REVIEW (5% of time)
+
+### When to Run
+
+After Spec Gate passes (9+/10). Before any code generation.
+
+**The principle:** The same AI that wrote your specs has the same blind spots you do. A different model — or a human with instructions to attack — finds what you can't see.
+
+> "When code fails, fix the spec — not the code. Phase 2.5 finds spec failures before there's any code to fail."
+
+### The Process
+
+```
+1. Spec Gate passes (9+/10) → proceed to adversarial step
+2. Submit specs to DIFFERENT AI model (Gemini, GPT-4, Perplexity)
+   OR trusted human reviewer
+3. Use the adversarial prompt below
+4. Categorize findings: CRITICAL / HIGH / MEDIUM / LOW
+5. Fix ALL CRITICAL issues → return to Spec Gate → re-score
+6. Document HIGH issues with explicit accept/defer decision
+7. Gate: zero CRITICAL remaining → proceed to Phase 3
+```
+
+**Why a different model:** The AI that generated or reviewed your docs learned your assumptions. A different model has no context, no charitable interpretation, no benefit of the doubt. It finds gaps your primary AI normalizes.
+
+### The Adversarial Prompt Template
+
+```markdown
+You are a skeptical senior developer and hostile critic reviewing 
+this specification before it goes to an AI agent for execution.
+
+## Your Mission
+Find every flaw. Assume problems exist — your job is to find them.
+Do not be helpful. Do not suggest minor improvements. Attack the spec.
+
+## What to Look For
+
+### 1. LOGICAL CONTRADICTIONS
+- Claims that conflict with each other within the spec
+- Numbers that don't add up
+- Requirements that are mutually exclusive
+
+### 2. CREDIBILITY RISKS  
+- Overclaims ("zero bugs", "always", "never", "guaranteed")
+- Unverifiable statements with no measurement method
+- Claims a hostile reader would immediately challenge
+
+### 3. IMPLICIT DEGREES OF FREEDOM
+- Points where the AI agent must CHOOSE between valid interpretations
+- Anything where two different developers would implement differently
+- Edge cases that are mentioned but not fully specified
+
+### 4. MISSING CONSIDERATIONS
+- Error states that have no specified handling
+- Concurrency or race conditions not addressed  
+- External dependencies with no fallback specified
+- Security assumptions not made explicit
+
+### 5. DEFENSIBILITY GAPS
+- "What would a hostile HN commenter use to debunk this?"
+- "What would a junior developer get wrong from this spec?"
+- "What happens when the happy path fails?"
+
+## Output Format
+
+For each issue found:
+**[SEVERITY]** — Issue title  
+Location: Where in the spec  
+Problem: What exactly is wrong  
+Fix: Specific rewrite needed  
+
+Severity:
+- **CRITICAL:** Execution will fail or produce wrong output without this fix
+- **HIGH:** Significant risk of incorrect implementation  
+- **MEDIUM:** Minor ambiguity, lower risk
+- **LOW:** Polish, not blocking
+
+## Success Criteria
+
+A good adversarial review finds:
+- At least 2 CRITICAL issues (if zero, you haven't looked hard enough)
+- At least 4-5 HIGH issues
+- 10+ total issues across all severities
+
+If you find fewer, state explicitly why the spec is unusually strong.
+```
+
+### Gate Criteria
+
+- [ ] Zero CRITICAL issues remaining
+- [ ] All HIGH issues documented with explicit decision: fix now / accept risk / defer
+- [ ] Spec Gate re-run if any CRITICAL was fixed (score may have changed)
+
+### What Counts as "Different AI"
+
+| Option | Notes |
+|--------|-------|
+| Gemini (Google) | Best for logical contradictions |
+| GPT-4o (OpenAI) | Good for missing considerations |
+| Perplexity | Useful for factual/credibility checks |
+| Trusted human (senior dev) | Highest signal, highest effort |
+
+**Never use the same Claude session** that helped write the docs. Start a fresh session at minimum — different model preferred.
 
 ---
 
@@ -299,13 +396,13 @@ Every implementation document MUST include these four sections. Without them, AI
 
 ---
 
-## ⚠️ THE CLARITY GATE (v3.4 - COMPLETE)
+## ⚠️ THE SPEC GATE (v3.5 - COMPLETE)
 
 **⛔ NEVER SKIP THIS GATE.**
 
 This is the difference between stream coding and vibe coding. A 7/10 spec generates 7/10 code that needs 30% rework.
 
-### The 13-Item Clarity Gate Checklist
+### The 13-Item Spec Gate Checklist
 
 Before ANY code generation, verify ALL items pass:
 
@@ -383,12 +480,12 @@ If you answer "no" or "yes" to any question that should be opposite → Fix befo
 
 ---
 
-## AI-ASSISTED CLARITY GATE (Meta-Prompt)
+## AI-ASSISTED SPEC GATE (Meta-Prompt)
 
 Use this prompt to have Claude score your documentation:
 
 ```markdown
-**ROLE:** You are the Clarity Gatekeeper. Your job is to ruthlessly 
+**ROLE:** You are the Spec Gatekeeper. Your job is to ruthlessly 
 evaluate software specifications for ambiguity, incompleteness, and 
 "vibe coding" tendencies.
 
@@ -422,7 +519,7 @@ evaluate software specifications for ambiguity, incompleteness, and
 
 ---
 
-## PHASE 3: EXECUTION (15% of time)
+## PHASE 3: EXECUTION (10% of time)
 
 ### The Generate-Verify-Integrate Loop
 
@@ -463,7 +560,7 @@ If generated code doesn't work:
 ### Preventing Divergence
 
 | Scenario | ❌ Wrong | ✅ Right |
-|----------|----------|----------|
+|----------|----------|---------|
 | Bug in generated code | Fix code manually | Fix spec, regenerate |
 | Missing edge case | Add code patch | Add to spec, regenerate |
 | Performance issue | Optimize code | Document constraint, regenerate |
@@ -495,9 +592,9 @@ This methodology activates when the user says:
 1. **Check for existing docs:** "Do you have existing documentation for this project?"
 2. **If existing docs:** "Let's start with a Documentation Audit to clean them before building."
 3. **If Phase 1 incomplete:** "Before building, let's clarify strategy. [Ask 7 Questions]"
-4. **If Phase 2 incomplete:** "Before coding, let's ensure documentation is AI-ready. [Run Clarity Gate]"
-5. **If Clarity Gate not passed:** "Documentation scores [X]/10. Let's fix [specific issues] before proceeding."
-6. **If Phase 3 ready:** "Documentation passes Clarity Gate (9+/10). Generating implementation..."
+4. **If Phase 2 incomplete:** "Before coding, let's ensure documentation is AI-ready. [Run Spec Gate]"
+5. **If Spec Gate not passed:** "Documentation scores [X]/10. Let's fix [specific issues] before proceeding."
+6. **If Phase 3 ready:** "Documentation passes Spec Gate (9+/10). Generating implementation..."
 7. **If maintaining (Phase 4):** "Is this change spec-conformant? Let's update docs first."
 
 ---
@@ -523,7 +620,14 @@ This methodology activates when the user says:
 - [ ] Add deep links to ALL documents
 - [ ] Use pointers (not duplicates) in strategic docs
 
-**Clarity Gate:**
+**Phase 2.5 — Adversarial Review:**
+- [ ] Submit specs to different AI model or human reviewer
+- [ ] Use adversarial prompt template
+- [ ] Fix ALL CRITICAL issues before Phase 3
+- [ ] Document HIGH issues with accept/defer decision
+- [ ] Re-run Spec Gate if CRITICAL issues were fixed
+
+**Spec Gate:**
 - [ ] Pass all 13 checklist items
 - [ ] Score 9+/10 on AI Coder Understandability
 - [ ] Answer all 6 self-assessment questions correctly
@@ -539,7 +643,7 @@ This methodology activates when the user says:
 - ❌ Build on existing docs without running Documentation Audit first
 - ❌ Skip to coding without clear docs
 - ❌ Accept vague specs ("handle errors appropriately")
-- ❌ Skip Clarity Gate (even if you wrote the docs yourself)
+- ❌ Skip Spec Gate (even if you wrote the docs yourself)
 - ❌ Put Anti-patterns/Test Cases/Error Handling in strategic docs
 - ❌ Use vague references ("see Technical Annexes")
 - ❌ Duplicate content across document types
@@ -625,7 +729,7 @@ This methodology activates when the user says:
 
 ## QUICK REFERENCE
 
-### The 13-Item Clarity Gate
+### The 13-Item Spec Gate
 
 **Foundation (7):**
 1. Actionable? 2. Current? 3. Single source? 4. Decision not wish?
@@ -656,9 +760,11 @@ This methodology activates when the user says:
 │  Phase 1 (Strategy): 40% ──┐                                │
 │  Phase 2 (Specs): 40% ─────┼── 80% Documentation            │
 │                            │                                │
-│  ⚠️ CLARITY GATE ──────────┘                                │
+│  ⚠️ SPEC GATE ─────────────┘                                │
 │                            │                                │
-│  Phase 3 (Code): 15% ──────┼── 20% Code                     │
+│  🔴 Phase 2.5 (Adversarial): 5% ← different AI attacks spec │
+│                            │                                │
+│  Phase 3 (Code): 10% ──────┼── 15% Code + Quality           │
 │  Phase 4 (Quality): 5% ────┘                                │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
@@ -673,21 +779,19 @@ This methodology activates when the user says:
 
 ---
 
-**Version:** 3.4
-**Changes from 3.3.1:**
-- Complete 13-item Clarity Gate (was 5 items)
-- Scoring rubric with 6 weighted criteria
-- Self-assessment questions before Phase 3
-- AI-assisted scoring meta-prompt included
-- 4 mandatory section templates with examples
-- Phase 1 questions with reject/require examples
-- Documentation Audit integrated into Phase 1 (replaces "Phase 0")
-
-**Core Insight:** The Clarity Gate is the methodology. Everything else supports getting docs to 9+/10.
+**Version:** 3.5
+**Changes from 3.4:**
+- Phase 2.5 Adversarial Review added (full section with process, prompt template, gate criteria)
+- Time allocation updated: 40/40/5/10/5 (was 40/40/15/5)
+- "Clarity Gate" renamed to "Spec Gate" throughout (structural completeness, 13 items)
+- Two-gate pipeline documented: Spec Gate (this skill) + Clarity Gate (separate standalone tool for epistemic quality)
+- Contract section updated with Phase 2.5 checklist
+- Quick reference diagram updated
+- Core insight: Spec Gate catches completeness. Adversarial Review catches correctness. Clarity Gate (standalone) catches epistemic drift.
 
 ---
 
 *Stream Coding by Francesco Marinoni Moretto — CC BY 4.0*
 *github.com/frmoretto/stream-coding*
 
-**END OF STREAM CODING v3.4**
+**END OF STREAM CODING v3.5**

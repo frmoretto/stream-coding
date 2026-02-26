@@ -115,7 +115,7 @@ In Fall/Winter 2025, the methodology gap became undeniable. Six major specificat
 | **October 2025** | Kiro IDE | Spec-first IDE with task orchestration |
 | **October 2025** | Specific.dev | SaaS specification platform |
 | **October 2025** | Cursor | AI IDE with spec-aware features |
-| **November 2025** | Stream Coding | Tool-agnostic methodology + Clarity Gate |
+| **November 2025** | Stream Coding | Tool-agnostic methodology + Spec Gate |
 | **December 2025** | Gemini Conductor | Google's "Context-Driven Development" |
 
 Six independent teams. Same conclusion: **specifications as primary artifacts.**
@@ -124,7 +124,7 @@ This isn't coincidence. This is market consensus.
 
 But each solves a fragment. GitHub's framework is high-friction to implement. Kiro focuses on task orchestration without strategic thinking. Cursor delivers speed without methodology. Conductor manages workflow state but has no pre-execution verification.
 
-Stream Coding delivers the complete framework: Strategic thinking → AI-ready documentation → Clarity Gate → rapid execution → quality control.
+Stream Coding delivers the complete framework: Strategic thinking → AI-ready documentation → Spec Gate → rapid execution → quality control.
 
 Not fragments. The proven, systematic methodology with the only pre-execution verification gate in the industry.
 

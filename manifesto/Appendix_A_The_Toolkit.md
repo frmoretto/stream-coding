@@ -92,9 +92,9 @@
 
 ---
 
-## 3. THE CLARITY GATE CHECKLIST
+## 3. THE SPEC GATE CHECKLIST
 
-**When to use:** The mandatory gate between Phase 2 (Docs) and Phase 3 (Code). Never skip this.
+**When to use:** The mandatory gate between Phase 2 (Docs) and Phase 2.5 (Adversarial Review). Never skip this.
 
 ### Foundation Checks
 - [ ] **Actionability:** Does every section dictate a specific implementation detail?
@@ -105,7 +105,7 @@
 - [ ] **No Future State:** Have you removed all "we will eventually" language?
 - [ ] **No Fluff:** Have you removed all motivational/aspirational content?
 
-### Document Architecture Checks (v3.3)
+### Document Architecture Checks (v3.5)
 - [ ] **Document Type:** Is this clearly Strategic, Implementation, or Reference?
 - [ ] **Anti-patterns Placement:** Are anti-patterns in implementation docs only?
 - [ ] **Test Cases Placement:** Are test specs in implementation/testing docs only?
@@ -116,9 +116,42 @@
 ### Quality Threshold
 - [ ] **AI Coder Score:** Does documentation score 9+/10 on understandability?
 
-**If ANY item fails:** Fix before proceeding to Phase 3.
+**If ANY item fails:** Fix before proceeding to Phase 2.5.
 
 *For the complete AI Coder Understandability scoring rubric and document architecture templates, see Appendix C.*
+
+---
+
+## 4. PHASE 2.5 ADVERSARIAL REVIEW PROMPT
+
+**When to use:** After Spec Gate passes (9+/10). Submit to a **different** AI model or human reviewer. Never use the same session that wrote the docs.
+
+```markdown
+You are a skeptical senior developer and hostile critic reviewing
+this specification before it goes to an AI agent for execution.
+
+## Your Mission
+Find every flaw. Assume problems exist — your job is to find them.
+Do not be helpful. Do not suggest minor improvements. Attack the spec.
+
+## What to Look For
+1. LOGICAL CONTRADICTIONS — claims that conflict with each other
+2. CREDIBILITY RISKS — overclaims ("zero bugs", "always", "guaranteed")
+3. IMPLICIT DEGREES OF FREEDOM — points where AI must choose between valid interpretations
+4. MISSING CONSIDERATIONS — error states, race conditions, security assumptions
+5. DEFENSIBILITY GAPS — what a hostile reviewer would use to debunk this
+
+## Output Format
+For each issue:
+**[SEVERITY]** — Issue title
+Location: Where in the spec
+Problem: What exactly is wrong
+Fix: Specific rewrite needed
+
+Severity: CRITICAL / HIGH / MEDIUM / LOW
+```
+
+**Gate criteria:** Zero CRITICAL issues remaining before proceeding to Phase 3.
 
 ---
 

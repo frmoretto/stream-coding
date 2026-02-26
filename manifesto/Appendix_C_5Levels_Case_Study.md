@@ -277,4 +277,4 @@ The specifications were so complete that each module was a translation exercise:
 
 ---
 
-*For the Advanced Framework (v3.3) including Document Type Architecture and the full 13-item Clarity Gate, see [advanced/Advanced_Framework_v3.3.md](./advanced/Advanced_Framework_v3.3.md)*
+*For the Advanced Framework (v3.5) including Document Type Architecture, the full 13-item Spec Gate, and Phase 2.5 Adversarial Review, see [advanced/Advanced_Framework.md](./advanced/Advanced_Framework.md)*

@@ -150,7 +150,7 @@ The solution is systematic methodology:
 Phase 1: Solve ALL strategic problems (human thinking)
         └─ If you have existing docs, start with a Documentation Audit
 Phase 2: Document COMPLETELY (AI-ready specifications)
-⚠️ CLARITY GATE: Verify docs are AI-ready before proceeding
+⚠️ SPEC GATE: Verify docs are AI-ready before proceeding
 Phase 3: Execute with AI (code streams out automatically)
 Phase 4: When code fails, fix the spec—not the code
 ```
