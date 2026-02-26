@@ -1,10 +1,10 @@
-# Stream Coding v3.4
+# Stream Coding v3.5
 
 **The 10-20x Methodology for AI-Accelerated Software Development**
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
-> 📢 **v3.4 Update:** Complete 13-item Clarity Gate (was 5 items), scoring rubric, Documentation Audit. Re-download if using older version.
+> 📢 **v3.5 Update:** Phase 2.5 Adversarial Review added, internal gate renamed Spec Gate (structural), Clarity Gate is now a standalone epistemic tool. Re-download if using older version.
 
 > ✅ **This methodology built 7 production modules in 4.5 hours** ([5Levels Case Study](./manifesto/Appendix_C_5Levels_Case_Study.md), Git-verified)
 
@@ -31,10 +31,12 @@ This gap between task velocity and project velocity is the **Velocity Mirage**.
 
 Stream Coding is a documentation-first methodology that makes AI-generated code deterministic.
 
-**The 40/40/20 Split:**
+**The 40/40/5/10/5 Split:**
 - **40%** Strategic Thinking (Phase 1) — Solve hard problems before coding
 - **40%** AI-Ready Documentation (Phase 2) — Specs so complete AI has zero decisions
-- **20%** Execution + Quality (Phases 3-4) — Code streams out automatically
+- **5%** Adversarial Review (Phase 2.5) — Different AI attacks the specs before coding
+- **10%** Execution (Phase 3) — Code streams out automatically
+- **5%** Quality (Phase 4) — Tests and verification
 
 **Real Results (5Levels Case Study):**
 - 7 production modules in 4.5 hours
@@ -86,9 +88,9 @@ Use [`skills/stream-coding/SKILL.md`](skills/stream-coding/SKILL.md) (agentskill
 ### Option 5: Manual / Other LLMs
 
 For Cursor, Windsurf, or other AI tools:
-- Extract core principles (Phases, Document Types, Clarity Gate)
+- Extract core principles (Phases, Document Types, Spec Gate)
 - Create a condensed version for `.cursorrules` or project settings
-- Use the [templates](./templates) and [Clarity Gate Checklist](./templates/CLARITY_GATE_CHECKLIST.md) as reference
+- Use the [templates](./templates) and [Spec Gate Checklist](./templates/SPEC_GATE_CHECKLIST.md) as reference
 
 The methodology is tool-agnostic—only SKILL.md is Claude-optimized.
 
@@ -103,12 +105,12 @@ The [`/manifesto`](./manifesto) folder contains the complete methodology:
 | [Chapter 1](./manifesto/Chapter_01_The_10x_Promise.md) | The Velocity Mirage |
 | [Chapter 2](./manifesto/Chapter_02_Why_AI_Cant_Deliver.md) | Why AI Tools Alone Fail |
 | [Chapter 3](./manifesto/Chapter_03_The_Methodology_Gap.md) | The Missing Middle |
-| [Chapter 4](./manifesto/Chapter_04_What_Is_Stream_Coding.md) | The 4-Phase Methodology |
+| [Chapter 4](./manifesto/Chapter_04_What_Is_Stream_Coding.md) | The 5-Phase Methodology |
 | [Chapter 5](./manifesto/Chapter_05_The_Perpetual_Stream.md) | Day 2 & The Rule of Divergence |
 | [Appendix A](./manifesto/Appendix_A_The_Toolkit.md) | Templates & Checklists |
 | [Appendix B](./manifesto/Appendix_B_References.md) | Research & SDD Positioning |
 | [Appendix C](./manifesto/Appendix_C_5Levels_Case_Study.md) | 5Levels Case Study (Git-Verified) |
-| [Advanced Framework](./manifesto/advanced/Advanced_Framework_v3.3.md) | Document Architecture (v3.3) |
+| [Advanced Framework](./manifesto/advanced/Advanced_Framework.md) | Document Architecture (v3.5) |
 
 ### Use the Templates
 
@@ -118,7 +120,7 @@ The [`/templates`](./templates) folder contains ready-to-use frameworks:
 |----------|--------|
 | [Strategic Blueprint](./templates/STRATEGIC_BLUEPRINT.md) | Answer the 7 Phase 1 Questions |
 | [ADR Template](./templates/ADR_TEMPLATE.md) | Document architecture decisions with rationale |
-| [Clarity Gate Checklist](./templates/CLARITY_GATE_CHECKLIST.md) | The mandatory Phase 2→3 gate |
+| [Spec Gate Checklist](./templates/SPEC_GATE_CHECKLIST.md) | The mandatory Phase 2→2.5 gate |
 
 ---
 
@@ -176,7 +178,7 @@ Every manual code edit without updating the spec creates **Divergence**—techni
 | **Target** | Individual developers | Founders, small teams | Large enterprises |
 | **Focus** | Task velocity | Project velocity | Process compliance |
 | **Cost** | $10-20/mo | Free | Enterprise pricing |
-| **Methodology** | None | 4-phase, Clarity Gate | Full SDLC |
+| **Methodology** | None | 5-phase, Spec Gate | Full SDLC |
 | **Documentation** | Optional | Mandatory (80% of time) | Mandatory |
 | **AI Role** | Code suggestions | Spec execution | Workflow automation |
 
@@ -209,7 +211,7 @@ The methodology isn't magic, it's systematic application of spec-driven developm
 | Phase | Status | Description |
 |-------|--------|-------------|
 | **v3.4** | ✅ Released | 13-item Clarity Gate, scoring rubric, Documentation Audit |
-| **v3.5** | 🔜 Planned | Integration with Clarity Gate verification system |
+| **v3.5** | ✅ Released | Phase 2.5 Adversarial Review, Spec Gate (structural), Clarity Gate (epistemic) split |
 | **v4.0** | 🔜 Planned | Multi-agent workflow support, automated spec validation |
 
 ---
@@ -221,7 +223,7 @@ Stream Coding is open source under CC BY 4.0. You're free to use, adapt, and sha
 Looking for:
 1. **Real-world case studies** — Applied Stream Coding to your project?
 2. **Tool integrations** — Cursor, Windsurf, other AI tools
-3. **Methodology feedback** — Are the 4 phases the right split?
+3. **Methodology feedback** — Are the 5 phases the right split?
 4. **Template improvements** — Better Strategic Blueprint, ADR formats
 
 Open an issue or PR.

@@ -1,12 +1,12 @@
-# CLARITY GATE CHECKLIST
+# SPEC GATE CHECKLIST
 
-> **Mandatory Gate** — Complete this checklist between Phase 2 (Documentation) and Phase 3 (Execution).
+> **Mandatory Gate** — Complete this checklist between Phase 2 (Documentation) and Phase 2.5 (Adversarial Review).
 > If ANY item fails, fix the documentation before proceeding. Never skip this.
 
 ---
 
-**Project:** [Project Name]  
-**Date:** [YYYY-MM-DD]  
+**Project:** [Project Name]
+**Date:** [YYYY-MM-DD]
 **Reviewer:** [Name]
 
 ---
@@ -23,7 +23,7 @@
 
 ---
 
-## Document Architecture Checks (v3.3)
+## Document Architecture Checks (v3.5)
 
 - [ ] **Document Type:** Is each document clearly Strategic, Implementation, or Reference?
 - [ ] **Anti-patterns Placement:** Are anti-patterns in implementation docs only?
@@ -53,8 +53,8 @@ Ask yourself: "If I gave this doc to an AI with no other context, would it produ
 
 ## Gate Result
 
-- [ ] **PASS** — All items checked, proceed to Phase 3
-- [ ] **FAIL** — Items below need fixing before Phase 3
+- [ ] **PASS** — All items checked, proceed to Phase 2.5 (Adversarial Review)
+- [ ] **FAIL** — Items below need fixing before Phase 2.5
 
 ### Items Requiring Fix
 
@@ -66,12 +66,12 @@ Ask yourself: "If I gave this doc to an AI with no other context, would it produ
 
 ## Sign-off
 
-**Approved by:** _______________  
+**Approved by:** _______________
 **Date:** _______________
 
 ---
 
-*For the complete AI Coder Understandability scoring rubric and document architecture templates, see [Appendix C](../manifesto/advanced/Advanced_Framework_v3.3.md).*
+*For the complete AI Coder Understandability scoring rubric and document architecture templates, see [Advanced Framework](../manifesto/advanced/Advanced_Framework.md).*
 
 ---
 
